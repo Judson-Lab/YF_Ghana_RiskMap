@@ -1,0 +1,371 @@
+---
+title: "YF vaccination coverage model"
+author: "Mirava Yuson"
+date: "2026-08-19"
+output: html_document
+---
+
+## Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Packages
+
+```{r packages, message=FALSE, warning=FALSE}
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(sf)
+library(readr)
+library(stringr)
+library(grid) #map cropping
+library(ggrepel) #map labelling
+```
+
+## Replace missing values with 0
+
+```{r clamp}
+clamp01 <- function(x) { x[is.na(x)] <- 0; pmin(pmax(x, 0), 1) }
+```
+
+## This code uses baseline coverage from 2000 to estimate district-level YF vaccination coverage in Ghana. The model is currently being used for risk mapping.
+
+```{r}
+run_model_one_district <- function(df) {
+  
+  df <- df %>%
+    filter(year >= 2000) %>%
+    mutate(year = as.numeric(year)) %>%
+    arrange(year)
+  
+  #Stop running if not enough data
+  if (nrow(df) < 2) {
+    return(df[0, ])
+  }
+  
+  #Check required/missing columns
+  required_cols <- c("year","infants","total_pop","shearer_opt","routine","supplementary")
+  missing_cols <- setdiff(required_cols, names(df))
+  if (length(missing_cols) > 0) {
+    stop("Missing required columns for district ", unique(df$district),
+         ": ", paste(missing_cols, collapse = ", "))
+  }
+  
+  #Turn columns into numeric format
+  num_cols <- c("infants","total_pop","shearer_opt","routine","supplementary")
+  df[num_cols] <- lapply(df[num_cols], function(x) as.numeric(as.character(x)))
+  
+  #Error out any N/As
+  if (anyNA(df$infants) || anyNA(df$total_pop)) {
+    bad <- which(is.na(df$infants) | is.na(df$total_pop))[1]
+    stop("NA in infants/total_pop at district ", unique(df$district),
+         ", year ", df$year[bad], ". Fix the CSV.")
+  }
+  if (any(df$infants < 0, na.rm = TRUE) || any(df$total_pop < 0, na.rm = TRUE)) {
+    stop("Negative infants or total_pop found in district ", unique(df$district), ". Fix the CSV.")
+  }
+  if (any(df$infants > df$total_pop, na.rm = TRUE)) {
+    bad <- which(df$infants > df$total_pop)[1]
+    stop("infants > total_pop at district ", unique(df$district),
+         ", year ", df$year[bad], ". Fix the CSV.")
+  }
+  
+  #Ensure that coverage is between 0 and 1; N/A becomes 0
+  df$shearer_opt    <- clamp01(df$shearer_opt)
+  df$routine        <- clamp01(df$routine)
+  df$supplementary  <- clamp01(df$supplementary)
+  
+  #Allocate storage columns
+  df <- df %>%
+    mutate(
+      #Number of people per state
+      U_inf = NA_real_, V_inf = NA_real_,
+      U_noninf = NA_real_, V_noninf = NA_real_,
+      #Totals
+      vaccinated_total = NA_real_,
+      Coverage_stock = NA_real_,
+      RI_flow = NA_real_,
+      #Flows (each year's results)
+      SIA_flow_inf = NA_real_,
+      SIA_flow_noninf = NA_real_,
+      SIA_flow = NA_real_,
+      Total_flow = NA_real_
+    )
+  
+  #Baseline year (t = 1)
+  t1 <- 1
+  infants1    <- df$infants[t1]
+  total_pop1  <- df$total_pop[t1]
+  noninf_pop1 <- total_pop1 - infants1
+  
+  U_inf_prev    <- infants1
+  V_inf_prev    <- 0
+  V_noninf_prev <- df$shearer_opt[t1] * noninf_pop1
+  U_noninf_prev <- noninf_pop1 - V_noninf_prev
+  
+  df$U_inf[t1]    <- U_inf_prev
+  df$V_inf[t1]    <- V_inf_prev
+  df$U_noninf[t1] <- U_noninf_prev
+  df$V_noninf[t1] <- V_noninf_prev
+  
+  df$vaccinated_total[t1] <- V_inf_prev + V_noninf_prev
+  df$Coverage_stock[t1]   <- df$vaccinated_total[t1] / total_pop1
+  
+  df$RI_flow[t1]         <- 0
+  df$SIA_flow_inf[t1]    <- 0
+  df$SIA_flow_noninf[t1] <- 0
+  df$SIA_flow[t1]        <- 0
+  df$Total_flow[t1]      <- 0
+  
+  #Simulation loop
+  for (t in 2:nrow(df)) {
+    
+    infants    <- df$infants[t]
+    total_pop  <- df$total_pop[t]
+    noninf_pop <- total_pop - infants
+    
+    r <- df$routine[t]
+    s <- df$supplementary[t]
+    
+    #1) New infants enter
+    U_inf <- infants
+    V_inf <- 0
+    
+    #2) RI among infants only
+    RI <- r * U_inf
+    U_inf_after_RI <- U_inf - RI
+    V_inf_after_RI <- V_inf + RI
+    
+    #3) Age last year's infants into non-infants
+    U_noninf_temp <- U_noninf_prev + U_inf_prev
+    V_noninf_temp <- V_noninf_prev + V_inf_prev
+    
+    #4) SIA applied to unvaccinated (infants + noninfants) only
+    total_unvax_before_SIA <- max(U_inf_after_RI + U_noninf_temp, 0)
+    
+    SIA_total <- min(s * total_unvax_before_SIA, total_unvax_before_SIA)
+    
+    if (total_unvax_before_SIA > 0) {
+      SIA_inf    <- SIA_total * (U_inf_after_RI / total_unvax_before_SIA)
+      SIA_noninf <- SIA_total - SIA_inf
+    } else {
+      SIA_inf <- 0
+      SIA_noninf <- 0
+    }
+    
+    #Apply transfers (moving people from unvaccinated to vaccinated)
+    U_inf_final    <- max(U_inf_after_RI - SIA_inf, 0)
+    V_inf_final    <- max(V_inf_after_RI + SIA_inf, 0)
+    
+    U_noninf_final <- max(U_noninf_temp - SIA_noninf, 0)
+    V_noninf_final <- max(V_noninf_temp + SIA_noninf, 0)
+    
+    #5) Mass balance via proportional rescaling to match total population
+    inf_total <- U_inf_final + V_inf_final
+    if (inf_total > 0) {
+      scale_inf <- infants / inf_total
+      U_inf_final <- U_inf_final * scale_inf
+      V_inf_final <- V_inf_final * scale_inf
+    } else {
+      U_inf_final <- infants
+      V_inf_final <- 0
+    }
+    
+    noninf_total <- U_noninf_final + V_noninf_final
+    if (noninf_total > 0) {
+      scale_noninf <- noninf_pop / noninf_total
+      U_noninf_final <- U_noninf_final * scale_noninf
+      V_noninf_final <- V_noninf_final * scale_noninf
+    } else {
+      U_noninf_final <- noninf_pop
+      V_noninf_final <- 0
+    }
+    
+    #Store each year's results
+    df$U_inf[t]    <- U_inf_final
+    df$V_inf[t]    <- V_inf_final
+    df$U_noninf[t] <- U_noninf_final
+    df$V_noninf[t] <- V_noninf_final
+    
+    df$vaccinated_total[t] <- V_inf_final + V_noninf_final
+    df$Coverage_stock[t]   <- if (total_pop > 0) df$vaccinated_total[t] / total_pop else NA_real_
+    
+    #Store flows
+    df$RI_flow[t]         <- RI
+    df$SIA_flow_inf[t]    <- SIA_inf
+    df$SIA_flow_noninf[t] <- SIA_noninf
+    df$SIA_flow[t]        <- SIA_total
+    df$Total_flow[t]      <- RI + SIA_total
+    
+    #Carry forward (How many vaccinations happened this year?)
+    U_inf_prev    <- U_inf_final
+    V_inf_prev    <- V_inf_final
+    U_noninf_prev <- U_noninf_final
+    V_noninf_prev <- V_noninf_final
+  }
+  
+  #Check that total number of infants/non-infants makes sense
+  stopifnot(all(abs((df$U_inf + df$V_inf) - df$infants) < 1e-6))
+  stopifnot(all(abs((df$U_noninf + df$V_noninf) - (df$total_pop - df$infants)) < 1e-6))
+  
+  df
+}
+```
+
+## Run model for all districts
+
+```{r}
+raw <- read_csv("optimistic1970.csv")
+
+results <- raw %>%
+  group_by(district) %>%
+  group_modify(~ run_model_one_district(.x)) %>%
+  ungroup()
+```
+
+## Write coverage stock to .csv (for map)
+
+```{r}
+write.csv(
+  results %>%
+    select(district, year, Coverage_stock),
+  "coverage_by_district_year_opt2000.csv",
+  row.names = FALSE
+)
+```
+
+## Organize data sets for mapping 2005 - 2025 data only
+
+```{r}
+#Shapefile (.dbf and .shx files should be in same folder)
+districts_sf <- st_read(
+  "261_Districts.shp",
+  quiet = FALSE
+)
+
+#Coverage data
+cov <- read_csv(
+  "coverage_by_district_year_opt2000.csv",
+  col_types = cols(
+    district = col_character(),
+    year = col_integer(),
+    Coverage_stock = col_double()
+  )
+) %>%
+  filter(year >= 2005, year <= 2025)
+
+#Clean district names to match both datasets
+clean_name <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    str_trim() %>%
+    str_replace_all("[[:punct:]]", " ") %>%
+    str_replace_all("\\s+", " ")
+}
+
+districts_sf2 <- districts_sf %>%
+  mutate(
+    district_key = clean_name(District)  # <-- replace DIST_NAME_FIELD
+  )
+
+cov2 <- cov %>%
+  mutate(
+    district_key = clean_name(district)
+  )
+
+#Check if district names match
+unmatched_cov <- cov2 %>%
+  anti_join(districts_sf2 %>% st_drop_geometry() %>% select(district_key),
+            by = "district_key") %>%
+  distinct(district) %>%
+  arrange(district)
+
+unmatched_shp <- districts_sf2 %>%
+  st_drop_geometry() %>%
+  anti_join(cov2 %>% select(district_key) %>% distinct(),
+            by = "district_key") %>%
+  distinct(district_key)
+
+unmatched_cov
+unmatched_shp
+
+#Join geometry x coverage (missing years become N/A)
+years <- 2005:2025
+
+#Full grid: every district in shapefile per year
+grid <- expand_grid(
+  district_key = districts_sf2 %>% st_drop_geometry() %>% pull(district_key) %>% unique(),
+  year = years
+)
+
+cov_full <- grid %>%
+  left_join(cov2 %>% select(district_key, year, Coverage_stock),
+            by = c("district_key", "year"))
+
+map_data <- districts_sf2 %>%
+  left_join(cov_full, by = "district_key")
+```
+
+## Map 2005 - 2025 data.
+
+```{r}
+p <- ggplot(map_data) +
+  geom_sf(aes(fill = Coverage_stock),
+          color = "black",
+          linewidth = 0.10) +
+  coord_sf(expand = FALSE) +
+  facet_wrap(~ year, ncol = 7) +
+  scale_fill_stepsn(
+    colours = c("#8c1d18", "#d7301f", "#fc8d59", "#FFD166",
+                "#e5f5f9", "#99d8c9", "#2ca25f"),
+    breaks  = c(0, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.0),
+    limits  = c(0, 1),
+    labels = function(x) {
+      labs <- percent(x, accuracy = 1)
+      show <- x %in% c(0, 0.6, 0.8, 0.9, 1.0)  # key thresholds
+      labs[!show] <- ""
+      labs
+    },
+    na.value = "grey85",
+    name = "Vaccination coverage"
+  ) +
+  labs(
+    title = "Yellow Fever vaccination coverage by district (Ghana), 2005–2025" #,
+    #subtitle = "(Optimistic)"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    strip.text = element_text(size = 10),
+    legend.position = "bottom",
+    legend.key.width = unit(30, "pt"),
+    legend.title = element_text(margin = margin(b = 5)),
+    legend.text = element_text(size = 9)
+  ) +
+  theme(
+  panel.spacing = unit(1, "lines")
+) +
+  guides(
+    fill = guide_colorsteps(
+      title.position = "top",
+      label.position = "bottom",
+      barwidth = unit(14, "cm"),
+      barheight = unit(0.6, "cm")
+    )
+  )
+
+p
+print(p)
+ggsave(
+  filename = "ghana_coverage_facets_2005_2025opt_landscape.png",
+  plot = p,
+  width = 24,
+  height = 14,
+  dpi = 300
+)
+```
