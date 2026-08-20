@@ -1,4 +1,4 @@
-## This folder contains the following files required for estimating district-level vaccination coverage against yellow fever in Ghana using a cohort state-transition model:
+This folder contains the following files required for estimating district-level vaccination coverage against yellow fever in Ghana using a cohort state-transition model:
 * **YF_vaccination_coverage_model.Rmd** - contains all necessary R code for model creation and map visualization.
 * **YF_vaccination_coverage_model.html** - presents all necessary R code knitted in html format.
 * **optimistic1970.csv** - contains all data pertaining to Ghana district-level population estimates and routine/supplementary immunization.
