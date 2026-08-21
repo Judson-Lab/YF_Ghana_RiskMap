@@ -1,0 +1,306 @@
+---
+title: "GH_YF_bivariate_risk_map"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(pacman)
+
+p_load(
+  tidyverse,
+  sf,
+  terra,
+  ggplot2,
+  ggspatial,
+  gt,
+  gtsummary,
+  biscale,
+  cowplot
+)
+
+
+```
+
+# Import shapefile
+```{r}
+gh_sf <- st_read("Ghana_ENM_Covariates/261_Districts.shp") %>% 
+  st_make_valid()
+
+
+# remove row with no values in geometry 
+gh_sf <- gh_sf %>%
+  filter(!is.na(OBJECTID))
+
+gh_vect <- terra::vect(gh_sf)
+```
+
+
+# Vacination Coverage
+```{r}
+# pull vax rates for total population from 2025
+vax <- read.csv("Ghana_ENM_Covariates/coverage_by_district_year_opt2000.csv") %>% 
+  filter(year == 2025)
+
+# Add vax values to shapefile
+gh_vax <- gh_sf %>% 
+  left_join(vax, by = c("District" = "district"))
+
+
+vax_plot <- ggplot() +
+  geom_sf(data = gh_vax, color = NA, aes(fill = Coverage_stock)) +
+    scale_fill_viridis_c(
+    option = "viridis",
+    na.value = "grey90"
+) 
+
+vax_plot
+
+r_template <- rast("Final_Results/template_raster.tif")
+
+plot(r_template)
+
+# Rasterize using a column
+final_vax <- rasterize(vect(gh_vax), r_template, field = "Coverage_stock", fun = mean) %>% 
+  mask(r_template)
+plot(final_vax)
+
+
+vax24 <- read.csv("Ghana_ENM_Covariates/coverage_by_district_year_opt2000.csv") %>% 
+  filter(year == 2024)
+
+# Add vax values to shapefile
+gh_vax24 <- gh_sf %>% 
+  left_join(vax24, by = c("District" = "district"))
+
+
+vax24_plot <- ggplot() +
+  geom_sf(data = gh_vax24, color = NA, aes(fill = Coverage_stock)) +
+    scale_fill_viridis_c(
+    option = "viridis",
+    na.value = "grey90"
+) 
+
+vax24_plot
+
+
+# Rasterize using a column
+final_vax24 <- rasterize(vect(gh_vax24), r_template, field = "Coverage_stock", fun = mean) %>% 
+  mask(r_template)
+plot(final_vax24)
+```
+
+
+## Bivariate mapping
+Bivariate map showing vaccine coverage and environmental suitability
+	- Env suitability (low is below MTP, medium is MTP, high is OR 10)
+	- Vax coverage 50, 60, 80
+	
+```{r}
+suit <- rast("Final_Results/env_suitability_thresholds.tif")
+
+levels(suit) <- data.frame(
+  ID = 1:3,
+  class = c("Low", "Moderate", "High")
+)
+
+
+plot(suit)
+
+
+unvax <- 1 - final_vax
+
+unvax_24 <- 1 - final_vax24
+
+unvax_cov <- classify(unvax,
+                      rbind(
+                        c(-Inf, 0.20, 1),   # <20% unvaccinated
+                        c(0.20, 0.40, 2),   # 20–40% unvaccinated
+                        c(0.40, Inf, 3)     # >40% unvaccinated
+                      ))
+
+levels(unvax_cov) <- data.frame(
+  ID = 1:3,
+  class = c("<20% unvaccinated", "20–40% unvaccinated", ">40% unvaccinated")
+)
+
+unvax_cov24 <- classify(unvax_24,
+                      rbind(
+                        c(-Inf, 0.20, 1),   # <20% unvaccinated
+                        c(0.20, 0.40, 2),   # 20–40% unvaccinated
+                        c(0.40, Inf, 3)     # >40% unvaccinated
+                      ))
+
+levels(unvax_cov24) <- data.frame(
+  ID = 1:3,
+  class = c("<20% unvaccinated", "20–40% unvaccinated", ">40% unvaccinated")
+)
+
+
+unvax_suit <- c(suit, unvax_cov)
+
+unvax_suit24 <- c(suit, unvax_cov24)
+
+names(unvax_suit) <- c("Environmental Suitability", "Percent Unvaccinated")
+
+names(unvax_suit24) <- c("Environmental Suitability", "Percent Unvaccinated")
+
+unvax_suit_df <- unvax_suit %>% 
+  as.data.frame(xy = TRUE, na.rm = FALSE)
+
+```
+
+# Create bivariate classes
+```{r}
+
+biv <- bi_class(unvax_suit_df,
+                 x = `Environmental Suitability`, 
+                 y = `Percent Unvaccinated`, 
+                 dim = 3) %>% 
+  filter(bi_class != "NA-NA")
+
+biv %>% 
+  count(bi_class) |> 
+  ggplot(aes(x = bi_class, y = n)) +
+  geom_col() +  # Create a bar plot to show the count of each bivariate class
+  labs(title = "Distribution of Bivariate Classes", x = "Bivariate Class", y = "Frequency")
+
+
+test_points <- read.csv("ENM_inputs_final/gh_occs_test_05_24.csv")
+```
+
+# Create bivariate map
+adapted from: https://www.datawim.com/post/creating-professional-bivariate-maps-in-r/
+```{r}
+# Set the color palette for the bivariate map
+palette <- "BlueOr"
+
+# Create the bivariate map 
+biv_map <- ggplot() +
+  theme_minimal(base_size = 14) +  # Set a minimal theme for the map
+  # Plot the bivariate raster data with appropriate fill color based on bivariate classes
+  geom_raster(data = biv, mapping = aes(x = x, y = y, fill = bi_class), show.legend = FALSE) +
+  # geom_point(
+  #   data = test_points,
+  #   aes(x = x, y = y, color = occ_label),
+  #   size = 1
+  # )  +
+  #   scale_color_manual(
+  #   name = "Points",
+  #   values = c("Test Occurrence (2024)" = "red")
+  # ) +
+  # Apply the bivariate color scale using the selected palette and dimensions
+  bi_scale_fill(pal = palette, dim = 3, flip_axes = TRUE, rotate_pal = FALSE) +
+  geom_sf(data = gh_sf, fill = NA, color = "black", linewidth = 0.10) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    legend.title = element_blank(),
+    legend.text = element_text(size = 10),
+    legend.key.size = unit(0.5, "lines"),
+      legend.position = "inside",
+  legend.position.inside = c(1.15, 0.55) # Places legend in top-right area
+  ) 
+
+biv_map
+
+
+# Create the legend for the bivariate map
+legend <- bi_legend(pal = palette,   
+                    flip_axes = TRUE,
+                    rotate_pal = FALSE,
+                    dim = 3,
+                    xlab = "Environmental Suitability",
+                    ylab = "Percent Unvaccinated",
+                    size = 8) +
+    theme(
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.background = element_rect(fill = "transparent", colour = NA),
+      legend.background = element_rect(fill = "transparent", colour = NA),
+      legend.key = element_rect(fill = "transparent", colour = NA))
+
+
+# Combine the map and legend using cowplot
+
+finalPlot <- ggdraw() +
+  draw_plot(biv_map, 0, 0, 1, 1) +  # Draw the main map plot
+  draw_plot(legend, 0.65, 0.05, 0.36, 0.36) # Draw the legend in the specified position
+
+
+
+# Display the final map with legend
+finalPlot
+
+ggsave(
+filename = file.path("Final_Results/Bivariate_risk_map.tiff"),
+plot = finalPlot,
+bg = "transparent",
+device = "tiff",
+dpi = 300,
+width = 180,
+height = 120,
+units = "mm",
+compression = "lzw"
+)
+```
+
+## Percent unvaccinated map
+```{r}
+unvax_df <- unvax_cov %>% 
+  as.data.frame(xy = TRUE, na.rm = TRUE)
+
+
+color_categories <- c("<20% unvaccinated" = "#D3D3D3", 
+                      "20–40% unvaccinated" = "#D8A386", 
+                      ">40% unvaccinated" = "#DD6A29")
+
+unvax_df$class <- factor(unvax_df$class , levels = c("<20% unvaccinated", 
+                                                     "20–40% unvaccinated",
+                                                     ">40% unvaccinated"))
+
+unvax_category_map <- ggplot() +
+  geom_raster(data = unvax_df, aes(x = x, y = y, fill = class)) +
+  geom_sf(data = gh_sf, fill = NA, color = "black", linewidth = 0.10) +
+  scale_fill_manual(values = color_categories, name = "Percent Unvaccincated") +
+  # geom_point(data = occ.xy,
+  #            aes(x = x, y = y),
+  #                color = "black",
+  #                size = 1) +
+  coord_sf(crs = "EPSG:4326", expand = FALSE) +
+  theme_bw() + #Clean theme
+  theme(
+    panel.grid.major = element_blank(),  # Remove major grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    axis.ticks = element_blank(), # Remove axis ticks,
+    axis.text = element_blank(),  # Remove axis text (coordinate degrees)
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank()
+  ) 
+unvax_category_map
+```
+
+```{r}
+ggsave(
+filename = file.path("Final_Results/percent_unvax_categories.tiff"),
+plot = unvax_category_map,
+device = "tiff",
+dpi = 300,
+width = 180,
+height = 120,
+units = "mm",
+compression = "lzw"
+)
+```
+
+

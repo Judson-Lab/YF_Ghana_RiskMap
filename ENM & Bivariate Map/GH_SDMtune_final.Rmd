@@ -1,0 +1,255 @@
+---
+title: "GH_SDMtune"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(pacman)
+p_load(SDMtune,
+       tidyverse, 
+       terra, 
+       sf, 
+       ENMeval,
+       ggplot2,
+       tidyterra,
+       gt,
+       ecospat
+)
+
+```
+
+
+## Set seed for reproducibility
+
+```{r}
+set.seed(15) #set random seed in order to reproduce this analysis
+```
+
+
+# Read in presence and environmental data
+```{r}
+occ_train <- read.csv("ENM_inputs_final/gh_occs_train_05_24.csv")
+occ_test <- read.csv("ENM_inputs_final/gh_occs_test_05_24.csv")
+
+envs <- rast("ENM_inputs_final/gh_envs_05_24.tif")
+
+bg <- read.csv("ENM_inputs_final/gh_bg_05_24.csv")
+
+bg <- bg %>% 
+  dplyr::select(-X)
+```
+
+```{r}
+# Create SWD object
+train_data <- prepareSWD(species = "Yellow Fever",
+                   p = occ_train,
+                   a = bg,
+                   env = envs)
+
+test_data <- prepareSWD(species = "Yellow Fever",
+                   p = occ_test,
+                   a = bg,
+                   env = envs)
+
+```
+
+
+# Create cross-validation folds
+```{r}
+cb_folds <- get.checkerboard(occ_train, envs, bg, aggregation.factor = c(8,8))
+
+table(cb_folds$occs.grp)
+table(cb_folds$bg.grp)
+
+```
+
+# Run maxent model with optimal tuning arguments
+```{r}
+# Train a Maxnet model
+model <- train(method = "Maxnet", 
+               data = train_data, 
+               folds = cb_folds,
+               reg =  0.5,
+               fc = "l")
+
+model
+
+
+map <- predict(model, # CV model, average of folds
+        data = envs,
+        fun = "mean",
+        type = "cloglog")
+
+
+plot(map)
+
+```
+
+# Variable importance
+```{r}
+
+vi_maxnet <- SDMtune::varImp(model, 
+                    permut = 100)
+
+
+vi_maxnet <- vi_maxnet %>% 
+  mutate(Variable = case_when(
+    Variable == "built_surface" ~ "Built surface area",
+    Variable == "edge_density" ~ "Edge density",
+    Variable == "mean_temp_coldest_quarter" ~ "Mean temperature of coldest quarter",
+    Variable == "precip_wettest_quarter" ~ "Precipitation of wettest quarter",
+    Variable == "NDVI_mean" ~ "NDVI",
+    Variable == "elevation" ~ "Elevation",
+    TRUE ~ Variable
+  ))
+
+vi_maxnet_tbl <- vi_maxnet %>% 
+  gt() %>% 
+  cols_label(
+    Variable = "Covariate",
+    Permutation_importance = "Permutation importance (%)",
+    sd = "Standard deviation (%)"
+  ) %>% 
+  fmt_number(
+    columns = c("Permutation_importance", "sd"),
+    decimals = 2
+  )
+
+vi_maxnet_tbl
+
+gtsave(vi_maxnet_tbl, "Final_Results/Variable_importance_table.docx")
+
+tiff("Final_Results/variable_importance.tif", width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
+
+plotVarImp(vi_maxnet)
+
+dev.off()
+
+plotVarImp(vi_maxnet)
+
+```
+
+# Plot standard deviation of environmental suitability
+```{r}
+sd_map <- predict(model,
+        data = envs,
+        fun = "sd",
+        type = "cloglog")
+
+summary(sd_map)
+
+plot(sd_map)
+
+```
+
+
+```{r}
+
+sd_map_final <- ggplot() +
+  geom_spatraster(data = sd_map) +
+  scale_fill_viridis_c(option = "mako", na.value = "transparent") +
+  labs(fill = "Environmental Suitability\nStandard Deviation")+
+  theme_bw() + #Clean theme
+  theme(
+    panel.grid.major = element_blank(),  # Remove major grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    axis.ticks = element_blank(), # Remove axis ticks,
+    axis.text = element_blank(),  # Remove axis text (coordinate degrees)
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank()
+  )
+
+sd_map_final
+
+ggsave(
+filename = file.path("Final_Results/GH_SD_suitability_map.tiff"),
+plot = sd_map_final,
+device = "tiff",
+dpi = 300,
+width = 180,
+height = 120,
+units = "mm",
+compression = "lzw"
+)
+
+```
+
+# compare with Lim et. al 2025
+```{r}
+# import Lim et. al raster of YF suitability
+
+#5×5km spatial-resolution global maps of probability of occurrence
+# occ data from 1927-2024
+# 105 occ from 2015-2024
+lim <- rast("Sensitivity Analyses/YF_riskmap_wmean_masked.tif")
+
+plot(lim)
+
+```
+
+
+# Check sensitivity and CBI values based on Lim et. al 2025 yellow fever suitability map
+```{r}
+coords_test <- test_data@coords[test_data@pa == 1, ]
+coords_train <- train_data@coords[train_data@pa == 1, ]
+
+# crop and align to Ghana template
+lim_ghana <- lim %>% 
+  terra::crop(ext(map)) %>% 
+  terra::resample(map, method = "bilinear") %>% 
+  terra::mask(map)
+
+plot(lim_ghana) 
+points(coords_test, col = "red")
+res(lim_ghana)
+
+
+lim_test_suitability <- terra::extract(lim_ghana, coords_test, 
+                                       search_radius = 2000) 
+# 2 test occurrences were on edge of Lim raster -- increase search radius to pull 
+# suitability from nearest valid cells
+
+# Lim binary threshold
+lim_thr <- 0.32
+
+lim_sens <- mean(lim_test_suitability[, 2] >= lim_thr, na.rm = TRUE)
+lim_sens 
+
+
+summary(lim_test_suitability$YF_riskmap_wmean_masked, na.rm = TRUE)
+
+
+bg_vals <- terra::values(lim_ghana, na.rm = TRUE)
+test_vals <- lim_test_suitability[,2]
+
+lim_train_suitability <- terra::extract(lim_ghana, coords_train, 
+                                       search_radius = 2000) 
+train_vals <- lim_train_suitability[,2]
+train_vals
+
+boyce_result_lim <- ecospat.boyce(
+  fit = bg_vals, 
+  obs = test_vals, 
+  PEplot = TRUE
+)
+
+boyce_result_lim$cor
+
+boyce_result_lim_train <- ecospat.boyce(
+  fit = bg_vals, 
+  obs = train_vals, 
+  PEplot = TRUE
+)
+
+boyce_result_lim_train$cor
+
+```
+
+
+
