@@ -1,0 +1,328 @@
+---
+title: "GH_YF_Covariates_Ecological_Zones"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load packages
+```{r}
+library(pacman)
+
+p_load(
+  tidyverse,
+  patchwork,
+  gt,
+  sf,
+  spdep,
+  terra,
+  ggplot2,
+  ggspatial,
+  cowplot
+)
+```
+
+# Import Ghana shapefile
+```{r}
+ghana_map <- st_read(
+  "../Shapefiles/261_Districts.shp") %>% 
+  st_make_valid() %>% 
+  filter(!is.na(OBJECTID))
+
+```
+
+# import modeling data (2005-2024 with covariates)
+```{r}
+yf_data <- read.csv("yf_05_24.csv")
+```
+
+```{r}
+zones <- st_read("../Shapefiles/Ecological Zones/Ghana_agroecologicalzones.shp")
+
+# Join zone names to yf shapefile, pulling the dominant ecozone in each district
+# convert crs to meters
+ghana_m <- st_transform(ghana_map, 32630) 
+
+zones_m <- st_transform(zones, 32630)
+
+intersection <- st_intersection(ghana_m, zones_m)
+
+# area of each overlap
+intersection$area <- st_area(intersection)
+
+# area by region and ecozone
+area_summary <- intersection %>%
+  st_drop_geometry() %>%
+  group_by(New_Region, CAPTION) %>%
+  summarise(total_area = sum(area), .groups = "drop")
+
+majority_ecozone <- area_summary %>%
+  group_by(New_Region) %>%
+  slice_max(total_area, n = 1, with_ties = FALSE) %>%
+  ungroup()
+
+yf_sf <- yf_data %>% 
+  left_join(ghana_map, by = c("OBJECTID", "District"))
+
+yf_final <- yf_sf %>% 
+  left_join(majority_ecozone, by = "New_Region") %>% 
+  mutate(zone_final = case_when(
+    CAPTION == "Decidous forest" ~ "Deciduous Forest",
+    CAPTION == "Transitional zone" ~ "Transitional Zone",
+    CAPTION == "Coastal savanna" ~ "Coastal Savanna",
+    CAPTION == "Wet evergreen" ~ "Wet Evergreen",
+    CAPTION == "Guinea savanna" ~ "Guinea Savanna",
+    TRUE ~ CAPTION))
+```
+
+
+```{r}
+zone_cov <- yf_final %>% 
+  group_by(zone_final, year) %>% 
+  summarise(
+    total_cases = sum(cases),
+    cases_present = case_when(
+      total_cases > 0 ~ 1,
+      TRUE ~ 0
+    ),
+    vax_lag12 = mean(vax_lag12),
+    mean_temp = mean(tmean_coldest_month),
+    mean_rain = mean(precip_sum),
+    mean_ndvi = mean(ndvi),
+    mean_built = mean(prop_urban_and_built_up),
+    .groups = "drop"
+) 
+
+zone_long <- zone_cov %>%
+  pivot_longer(
+    cols = -c(zone_final, year),
+    names_to = "covariate",
+    values_to = "value"
+  )
+```
+
+# Covariates by zone over time
+```{r}
+cols <- c("Transitional Zone" = "#5d2f89", "Deciduous Forest" = "#809D5B", 
+          "Coastal Savanna" = "#6CACE4","Wet Evergreen"  = "#39C7B2",
+          "Guinea Savanna" = "#F19425")
+
+zone_cov_st <- zone_long %>% 
+  filter(covariate == "mean_temp" | covariate == "mean_rain" | covariate == "mean_ndvi" |
+          covariate == "vax_lag12" | covariate == "mean_built") %>% 
+    mutate(covariate_name = case_when(
+    covariate == "mean_temp" ~ "Mean Temperature of Coldest Month",
+    covariate == "mean_rain" ~ "Annual Rainfall",
+    covariate == "mean_ndvi" ~ "NDVI",
+    covariate == "vax_lag12" ~ "Vaccine Coverage (1-year lag)",
+    covariate == "mean_built" ~ "Proportion of Built/Urban Area"
+  ))
+
+
+covariate_by_zone <- function(data, covariate) {
+  
+  df <- data[data$covariate_name == covariate, ]
+  
+  ggplot(df, aes(
+    x = year,
+    y = value,
+    color = zone_final
+  )) +
+    geom_line(linewidth = 0.8) +
+    labs(
+      x = "Year",
+      y = covariate,
+      color = "Ecological Zone"
+    ) +
+    scale_color_manual(values = cols) +
+    theme_minimal(base_size = 12) +
+    theme(
+      strip.text = element_text(face = "bold"),
+      legend.position = "bottom",
+       plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA)
+    )
+}
+
+
+temp <- covariate_by_zone(zone_cov_st, "Mean Temperature of Coldest Month")
+rain <-  covariate_by_zone(zone_cov_st,"Annual Rainfall")
+ndvi <- covariate_by_zone(zone_cov_st, "NDVI")
+vax <- covariate_by_zone(zone_cov_st, "Vaccine Coverage (1-year lag)")
+built <- covariate_by_zone(zone_cov_st, "Proportion of Built/Urban Area")
+
+
+zone_covariates <- plot_grid(temp + theme(legend.position="none"), 
+                                 rain + theme(legend.position="none"), 
+                                 ndvi + theme(legend.position="none"), 
+                                 vax + theme(legend.position="none"), 
+                                 built + theme(legend.position="none"),
+                               labels = c("a", "b", "c", "d", "e"))
+
+# extract a legend that is laid out horizontally
+legend_b <- get_legend(
+  (rain +
+     guides(color = guide_legend(nrow = 2)) +
+     theme(legend.position = "bottom"))
+)
+
+zones_final <- plot_grid(zone_covariates, legend_b, ncol = 1, rel_heights = c(1, .1))
+
+zones_final
+
+```
+
+```{r}
+ghana_zones <- ghana_map %>% 
+  left_join(majority_ecozone, by = "New_Region") %>% 
+  mutate(zone_final = case_when(
+    CAPTION == "Decidous forest" ~ "Deciduous Forest",
+    CAPTION == "Transitional zone" ~ "Transitional Zone",
+    CAPTION == "Coastal savanna" ~ "Coastal Savanna",
+    CAPTION == "Wet evergreen" ~ "Wet Evergreen",
+    CAPTION == "Guinea savanna" ~ "Guinea Savanna",
+    TRUE ~ CAPTION))
+
+zones_map <- ggplot() +
+  geom_sf(data = ghana_zones, aes(fill = zone_final), color = "black") +
+  scale_fill_manual(values = cols) +
+  labs(fill = "Ecological Zone") +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+     plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA),
+    plot.margin = margin(0, 0, 0, 0)
+  ) +
+    annotation_scale(
+    location   = "bl",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.5, "npc"),
+    pad_y      = unit(0.03, "npc")
+  ) +
+  annotation_north_arrow(
+    location = "br",
+    which_north = "true",
+    height = unit(0.8, "cm"),
+    width  = unit(0.8, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+  style = north_arrow_fancy_orienteering()
+) +
+  coord_sf(expand = FALSE)
+
+zones_map
+
+zones_map <- plot_grid(zones_map, labels = "f",   
+                       label_x = 0.1)  
+
+```
+
+# Zone map with legend
+```{r}
+zones_map_legend <- ggplot() +
+  geom_sf(data = ghana_zones, aes(fill = zone_final), color = "black") +
+  scale_fill_manual(values = cols) +
+  labs(fill = "Ecological Zone") +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "right",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+     plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA),
+    plot.margin = margin(0, 0, 0, 0)
+  ) +
+    annotation_scale(
+    location   = "bl",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.5, "npc"),
+    pad_y      = unit(0.03, "npc")
+  ) +
+  annotation_north_arrow(
+    location = "br",
+    which_north = "true",
+    height = unit(0.8, "cm"),
+    width  = unit(0.8, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+  style = north_arrow_fancy_orienteering()
+) +
+  #remove white space at top of plot
+  coord_sf(expand = FALSE)
+
+
+zones_map_legend
+
+ggsave(
+filename = file.path("Results/Ecozone_map.tiff"),
+plot = zones_map_legend,
+device = "tiff",
+dpi = 300,
+width = 180,
+height = 120,
+units = "mm",
+compression = "lzw"
+)
+
+```
+
+
+
+```{r}
+cov_fig <- plot_grid(
+  zones_final,
+  zones_map,
+  labels = c("", "f"),
+  rel_widths = c(4, 1),
+  ncol = 2,
+  align = "hv",
+  greedy = FALSE
+)
+
+
+cov_fig <- ggdraw(zones_final) +
+draw_plot(
+  zones_map,
+  x = 0.67,
+  y = 0.05,
+  width = 0.4,
+  height = 0.5
+)
+
+cov_fig
+
+ggsave(
+filename = file.path("Results/ST_covariates_by_zone.tiff"),
+plot = cov_fig,
+device = "tiff",
+dpi = 300,
+width = 290,
+height = 220,
+units = "mm",
+compression = "lzw"
+)
+```

@@ -1,0 +1,545 @@
+---
+title: "GH_YF_Incidence_LISA"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(pacman)
+
+p_load(sf, tidyverse, ggplot2, ggspatial, spdep)
+```
+
+## Import shapefile and annual confirmed/probable case data
+
+```{r}
+gh_sf <- st_read("../Shapefiles/261_Districts.shp") %>% 
+  st_make_valid()
+
+
+# remove row with no values in geometry 
+gh_sf <- gh_sf %>%
+  filter(!is.na(OBJECTID))
+
+load("annualYF_1970_2024.RData")
+
+annual_dist <- read.csv("confirmed_probable_2005_2024.csv")
+```
+
+
+# Import population data and calculate incidence rates
+```{r}
+pop_5yr <- read.csv("district_populations_2000_2025.csv") %>% 
+  filter(year < 2025 & year > 2004) %>% 
+  dplyr::select(-X)
+
+
+five_yr_cases_dist <- annual_dist %>% 
+  left_join(pop_5yr, by = c("district", "year")) %>% 
+  mutate(range = case_when(
+    year %in% 2005:2009 ~ "2005-2009",
+    year %in% 2010:2014 ~ "2010-2014",
+    year %in% 2015:2019 ~ "2015-2019",
+    year %in% 2020:2024 ~ "2020-2024",
+  )) %>% 
+  group_by(district, range) %>% 
+  summarise(tot_cases = sum(cases),
+            tot_pop = sum(pop)) %>% 
+  arrange(district)
+
+sum(five_yr_cases_dist$tot_cases)
+
+five_district <- five_yr_cases_dist %>% 
+  # incidence per 100,000 person-years
+  mutate(incidence = ((tot_cases / tot_pop)*100000))
+
+```
+
+# Map incidence rates for confirmed/probable cases
+```{r}
+cases5yr_sf <- gh_sf %>%
+  left_join(five_district, by = c("District" = "district")) %>% 
+  filter(!is.na(incidence))
+
+bbox <- st_bbox(gh_sf)
+
+scale_arrow_df <- st_as_sf(data.frame(
+  range = "2005-2009",
+  x = bbox["xmin"] - 0.1,   # right side
+  y = bbox["ymin"] + 0.1    # BOTTOM
+), coords = c("x", "y"), crs = st_crs(gh_sf))
+
+
+
+gh_5yr_IR <- ggplot() +
+  geom_sf(data = gh_sf, fill = "white", color = "darkgrey") +
+  geom_sf(data = cases5yr_sf, aes(fill = incidence), color = "darkgrey") +
+  scale_fill_viridis_c(
+    na.value = "grey90",
+    name = "Probable/Confirmed YF Cases\nper 100,000 person-years"
+  ) +
+  facet_wrap(~range, nrow = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+ annotation_scale(
+    data = scale_arrow_df,
+    location = "br",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.2, "npc"),
+    pad_y      = unit(0.02, "npc")
+  ) +
+
+  annotation_north_arrow(
+    data = scale_arrow_df,
+    location = "br",
+    which_north = "true",
+    height = unit(0.6, "cm"),
+    width  = unit(0.6, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+    style = north_arrow_fancy_orienteering()
+  )
+
+gh_5yr_IR
+```
+
+
+```{r}
+ggsave(
+filename = file.path("Results/GH_ProbConf_Inc_maps.tiff"),
+plot = gh_5yr_IR,
+device = "tiff",
+dpi = 300,
+width = 200,
+height = 140,
+units = "mm",
+compression = "lzw"
+)
+```
+
+# Import suspected annual case data and calculate incidence rates
+```{r}
+clean_district <- function(x){
+  x %>%
+    str_to_lower() %>%
+    str_replace_all("-", " ") %>%
+    str_replace_all("[^a-z ]", "") %>%
+    str_squish()
+}
+
+pop_5yr$district_final <- clean_district(pop_5yr$district)
+
+
+annual_sus <- read.csv("suspected_YF_2005_2024.csv")
+
+
+five_yr_sus_dist <- annual_sus %>% 
+  filter(year > 2004) %>% 
+  left_join(pop_5yr, by = c("district_final", "year")) %>% 
+  mutate(range = case_when(
+    year %in% 2005:2009 ~ "2005-2009",
+    year %in% 2010:2014 ~ "2010-2014",
+    year %in% 2015:2019 ~ "2015-2019",
+    year %in% 2020:2024 ~ "2020-2024",
+  )) %>% 
+  group_by(district_final, range) %>% 
+  summarise(tot_cases = sum(cases),
+            tot_pop = sum(pop)) %>% 
+  arrange(district_final)
+
+sum(five_yr_sus_dist$tot_cases)
+
+five_district_sus <- five_yr_sus_dist %>% 
+  # incidence per 100,000 person-years
+  mutate(incidence = ((tot_cases / tot_pop)*100000))
+```
+
+# Map incidence rates for suspected cases
+```{r}
+gh_sf$district_final <- clean_district(gh_sf$District)
+
+cases5yr_sus_sf <- gh_sf %>%
+  left_join(five_district_sus, by = "district_final")  %>% 
+  filter(!is.na(incidence))
+
+
+gh_5yr_sus_IR <- ggplot() +
+  geom_sf(data = gh_sf, fill = "white", color = "darkgrey") +
+  geom_sf(data = cases5yr_sus_sf, aes(fill = incidence), color = "darkgrey") +
+  scale_fill_viridis_c(
+    na.value = "grey90",
+    name = "Suspected YF Cases\nper 100,000 person-years"
+  ) +
+  facet_wrap(~range, nrow = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+ annotation_scale(
+    data = scale_arrow_df,
+    location = "br",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.2, "npc"),
+    pad_y      = unit(0.02, "npc")
+  ) +
+  annotation_north_arrow(
+    data = scale_arrow_df,
+    location = "br",
+    which_north = "true",
+    height = unit(0.6, "cm"),
+    width  = unit(0.6, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+    style = north_arrow_fancy_orienteering()
+  )
+
+gh_5yr_sus_IR
+
+```
+
+
+```{r}
+ggsave(
+filename = file.path("Results/GH_Susp_Inc_maps.tiff"),
+plot = gh_5yr_sus_IR,
+device = "tiff",
+dpi = 300,
+width = 200,
+height = 140,
+units = "mm",
+compression = "lzw"
+)
+```
+
+
+## LISA 
+
+# Confirmed/probable cases
+```{r}
+# expand dataset to include all districts, including those with zero cases
+ranges <- sort(unique(five_district$range))
+
+# dataset with one row for each district in each timeframe
+sf_poly_ranges <- gh_sf %>%
+  slice(rep(1:n(), each = length(ranges))) %>%
+  mutate(range = rep(ranges, times = nrow(gh_sf)))
+
+morans_confirmed <- sf_poly_ranges %>%
+  left_join(five_district %>% dplyr::select(district, range, incidence),
+            by = c("District" = "district", "range")) %>%
+  mutate(incidence_5yr = replace_na(incidence, 0))
+
+```
+
+```{r}
+# Create neighbors object
+gh_sp <- as(gh_sf, "Spatial")
+neighbors <- poly2nb(gh_sp, queen = TRUE)
+weights <- nb2listw(neighbors, style = "W")
+```
+
+```{r}
+local_morans_5yrs_calc <- function(data_df, year_col, inc_col, lw) {
+  
+  years <- sort(unique(data_df[[year_col]]))
+  
+  results <- lapply(years, function(y) {
+    
+    inc_y <- data_df %>%
+      filter(.data[[year_col]] == y) %>%
+      pull(.data[[inc_col]])
+    
+    local_moran <- localmoran(inc_y, lw, na.action = na.exclude)
+    
+    tibble(
+      range = y,
+      District = data_df %>% 
+        filter(.data[[year_col]] == y) %>% 
+        pull(District),
+      local_I = local_moran[, "Ii"],
+      z_I = local_moran[, "Z.Ii"],
+      p_value = local_moran[, 5],
+      cluster = attr(local_moran, "quadr")
+    )
+  })
+  
+  bind_rows(results)
+}
+
+local_morans_5yrs <- local_morans_5yrs_calc(
+  data_df = morans_confirmed,
+  year_col = "range",
+  inc_col = "incidence_5yr",
+  lw = weights
+)
+
+
+print(local_morans_5yrs)
+```
+
+# Map LISA of confirmed/probable cases
+```{r}
+sf_local_moran <- sf_poly_ranges %>%
+  left_join(local_morans_5yrs,
+            by = c("District", "range"))
+
+class(sf_local_moran)
+
+
+local_moran_map <- ggplot(sf_local_moran) +
+  geom_sf(aes(fill = cluster$median), color = "white", size = 0.1) +
+
+  scale_fill_manual(
+    values = c(
+      "High-High" = "#d73027",
+      "Low-Low" = "#4575b4",
+      "High-Low" = "#fdae61",
+      "Low-High" = "#abd9e9"
+    ),
+    name = "LISA Cluster Type"
+  ) +
+  facet_wrap(~ range, nrow = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+ annotation_scale(
+    data = scale_arrow_df,
+    location = "br",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.2, "npc"),
+    pad_y      = unit(0.02, "npc")
+  ) +
+  annotation_north_arrow(
+    data = scale_arrow_df,
+    location = "br",
+    which_north = "true",
+    height = unit(0.6, "cm"),
+    width  = unit(0.6, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+    style = north_arrow_fancy_orienteering()
+  )
+
+
+local_moran_map
+```
+
+```{r}
+ggsave(
+filename = file.path("Results/GH_local_morans_confirmed_probable.tiff"),
+plot = local_moran_map,
+device = "tiff",
+dpi = 300,
+width = 200,
+height = 140,
+units = "mm",
+compression = "lzw"
+)
+```
+
+# LISA supspected cases
+```{r}
+
+local_morans_5yrs_sus_calc <- function(data_df, year_col, inc_col, lw) {
+  
+  years <- sort(unique(data_df[[year_col]]))
+  
+  results <- lapply(years, function(y) {
+    
+    inc_y <- data_df %>%
+      filter(.data[[year_col]] == y) %>%
+      pull(.data[[inc_col]])
+    
+    local_moran <- localmoran(inc_y, lw, na.action = na.exclude)
+    
+    tibble(
+      range = y,
+      district_final = data_df %>% 
+        filter(.data[[year_col]] == y) %>% 
+        pull(district_final),
+      local_I = local_moran[, "Ii"],
+      z_I = local_moran[, "Z.Ii"],
+      p_value = local_moran[, 5],
+      cluster = attr(local_moran, "quadr")
+    )
+  })
+  
+  bind_rows(results)
+}
+
+local_morans_5yrs_sus <- local_morans_5yrs_sus_calc(
+  data_df = morans_sus,
+  year_col = "range",
+  inc_col = "incidence_5yr",
+  lw = weights
+)
+
+sf_local_moran_sus <- sf_poly_ranges %>%
+  left_join(local_morans_5yrs_sus,
+            by = c("district_final", "range"))
+
+
+```
+
+# Map LISA of suspected cases
+```{r}
+local_moran_map_sus <- ggplot(sf_local_moran_sus) +
+  geom_sf(aes(fill = cluster$median), color = "white", size = 0.1) +
+
+  scale_fill_manual(
+    values = c(
+      "High-High" = "#d73027",
+      "Low-Low" = "#4575b4",
+      "High-Low" = "#fdae61",
+      "Low-High" = "#abd9e9"
+    ),
+    name = "LISA Cluster Type"
+  ) +
+  facet_wrap(~ range, nrow = 1) +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+ annotation_scale(
+    data = scale_arrow_df,
+    location = "br",
+    width_hint = 0.25,
+    text_cex   = 0.55,
+    line_width = 0.6,
+    pad_x      = unit(0.2, "npc"),
+    pad_y      = unit(0.02, "npc")
+  ) +
+  annotation_north_arrow(
+    data = scale_arrow_df,
+    location = "br",
+    which_north = "true",
+    height = unit(0.6, "cm"),
+    width  = unit(0.6, "cm"),
+    pad_x  = unit(0.02, "npc"),
+    pad_y  = unit(0.02, "npc"),
+    style = north_arrow_fancy_orienteering()
+  )
+
+
+local_moran_map_sus
+```
+
+
+```{r}
+ggsave(
+filename = file.path("Results/GH_local_morans_suspected.tiff"),
+plot = local_moran_map_sus,
+device = "tiff",
+dpi = 300,
+width = 200,
+height = 140,
+units = "mm",
+compression = "lzw"
+)
+```
+
+# Line graphs of incidence rate by ecological zone
+# incidence rate over full study period
+```{r}
+# create sequence of all study years
+all_years <- seq(from = 2005, to = 2024, by = 1)
+
+# make set of all years for each district
+district_year_grid <- expand_grid(
+  district = gh_sf$District,
+  year = all_years
+)
+
+districts_final <- tibble(
+  district = gh_sf$District,
+  district_final = gh_sf$district_final
+)
+
+district_year_grid <- district_year_grid %>% 
+  left_join(districts_final, by = "district")
+  
+
+# join cases to grid
+cases_conf <- district_year_grid %>%
+  left_join(annual_dist, by = c("district", "year")) %>%
+  mutate(tot_cases = replace_na(cases, 0),
+         type = "Confirmed/Probable") %>% 
+  rename(cases_confirmed = cases)
+
+cases_conf <- cases_conf %>% 
+  left_join(zones, by = "district_final") %>% 
+  left_join(pop_5yr, by = c("district_final", "year")) %>% 
+  group_by(year, zone, type) %>% 
+  summarise(tot_cases = sum(tot_cases),
+            tot_pop = sum(pop)) %>% 
+  mutate(incidence = ((tot_cases / tot_pop)*100000))
+
+cases_sus <- district_year_grid %>%
+  left_join(annual_sus, by = c("district_final", "year")) %>%
+  mutate(tot_cases = replace_na(cases, 0),
+         type = "Suspected") %>% 
+  rename(cases_suspected = cases)
+
+cases_sus <- cases_sus %>% 
+  left_join(zones, by = "district_final") %>% 
+  left_join(pop_5yr, by = c("district_final", "year")) %>% 
+  group_by(year, zone, type) %>% 
+  summarise(tot_cases = sum(tot_cases),
+            tot_pop = sum(pop)) %>% 
+  mutate(incidence = ((tot_cases / tot_pop)*100000))
+
+cases_inc_tot <- bind_rows(cases_conf, cases_sus)
+
+```
+
+```{r}
+
+inc_by_zone <- ggplot(cases_inc_tot, aes(x = year, y = incidence, color = zone)) +
+  geom_line(linewidth = 1) +
+  # geom_point() + 
+  facet_wrap(~ type, scales = "free_y") +
+  scale_color_manual(values = cols) +
+  labs(x = "Year", y = "Incidence per 100k", color = "Ecological Zone") +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "bottom")
+  
+inc_by_zone
+
+ggsave(
+filename = file.path("Results/inc_zone_year.tiff"),
+plot = inc_by_zone,
+device = "tiff",
+dpi = 300,
+width = 275,
+height = 140,
+units = "mm",
+compression = "lzw"
+)
+
+```

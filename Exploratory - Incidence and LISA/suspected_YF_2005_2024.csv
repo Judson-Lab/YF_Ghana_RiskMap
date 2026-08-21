@@ -1,0 +1,3037 @@
+"","district_final","year","cases"
+"1","ablekuma central",2006,1
+"2","ablekuma central",2016,1
+"3","ablekuma central",2021,3
+"4","ablekuma central",2022,4
+"5","ablekuma central",2023,4
+"6","ablekuma north",2019,1
+"7","ablekuma north",2021,2
+"8","ablekuma north",2023,3
+"9","ablekuma north",2024,2
+"10","ablekuma west",2008,1
+"11","ablekuma west",2009,1
+"12","ablekuma west",2015,1
+"13","ablekuma west",2016,1
+"14","ablekuma west",2019,1
+"15","ablekuma west",2021,2
+"16","ablekuma west",2022,7
+"17","ablekuma west",2023,2
+"18","ablekuma west",2024,3
+"19","abuakwa north",2005,10
+"20","abuakwa north",2006,7
+"21","abuakwa north",2008,1
+"22","abuakwa north",2009,4
+"23","abuakwa north",2010,1
+"24","abuakwa north",2011,12
+"25","abuakwa north",2012,1
+"26","abuakwa north",2015,3
+"27","abuakwa north",2016,2
+"28","abuakwa north",2017,2
+"29","abuakwa north",2018,3
+"30","abuakwa north",2020,1
+"31","abuakwa north",2021,6
+"32","abuakwa north",2022,6
+"33","abuakwa north",2023,10
+"34","abuakwa north",2024,6
+"35","abura asebu kwamankese",2005,1
+"36","abura asebu kwamankese",2014,1
+"37","abura asebu kwamankese",2015,5
+"38","abura asebu kwamankese",2016,1
+"39","abura asebu kwamankese",2017,4
+"40","abura asebu kwamankese",2018,4
+"41","abura asebu kwamankese",2019,4
+"42","abura asebu kwamankese",2020,4
+"43","abura asebu kwamankese",2021,7
+"44","abura asebu kwamankese",2022,3
+"45","abura asebu kwamankese",2023,2
+"46","abura asebu kwamankese",2024,3
+"47","accra metro",2008,1
+"48","accra metro",2009,1
+"49","accra metro",2012,1
+"50","accra metro",2014,2
+"51","accra metro",2015,3
+"52","accra metro",2016,2
+"53","accra metro",2018,2
+"54","accra metro",2019,14
+"55","accra metro",2020,2
+"56","accra metro",2021,6
+"57","accra metro",2022,6
+"58","accra metro",2023,2
+"59","accra metro",2024,7
+"60","achiase",2005,1
+"61","achiase",2006,1
+"62","achiase",2011,5
+"63","achiase",2012,3
+"64","achiase",2013,2
+"65","achiase",2014,3
+"66","achiase",2016,2
+"67","achiase",2017,1
+"68","achiase",2020,1
+"69","achiase",2021,2
+"70","achiase",2022,3
+"71","achiase",2023,2
+"72","achiase",2024,1
+"73","ada east",2006,1
+"74","ada east",2010,1
+"75","ada east",2014,1
+"76","ada east",2017,2
+"77","ada east",2021,2
+"78","ada east",2022,3
+"79","ada east",2023,6
+"80","ada east",2024,5
+"81","ada west",2016,2
+"82","ada west",2018,9
+"83","ada west",2019,8
+"84","ada west",2020,1
+"85","ada west",2021,5
+"86","ada west",2022,4
+"87","ada west",2023,3
+"88","ada west",2024,4
+"89","adaklu",2006,1
+"90","adaklu",2010,5
+"91","adaklu",2011,2
+"92","adaklu",2015,2
+"93","adaklu",2016,4
+"94","adaklu",2017,2
+"95","adaklu",2018,6
+"96","adaklu",2019,7
+"97","adaklu",2020,2
+"98","adaklu",2021,12
+"99","adaklu",2022,12
+"100","adaklu",2023,10
+"101","adaklu",2024,7
+"102","adansi akrofuom",2020,3
+"103","adansi akrofuom",2021,2
+"104","adansi akrofuom",2022,3
+"105","adansi akrofuom",2023,1
+"106","adansi akrofuom",2024,3
+"107","adansi asokwa",2005,2
+"108","adansi asokwa",2006,10
+"109","adansi asokwa",2008,1
+"110","adansi asokwa",2010,7
+"111","adansi asokwa",2011,9
+"112","adansi asokwa",2012,2
+"113","adansi asokwa",2013,5
+"114","adansi asokwa",2014,1
+"115","adansi asokwa",2015,2
+"116","adansi asokwa",2017,1
+"117","adansi asokwa",2020,2
+"118","adansi asokwa",2021,15
+"119","adansi asokwa",2022,7
+"120","adansi asokwa",2023,4
+"121","adansi asokwa",2024,1
+"122","adansi north",2018,1
+"123","adansi north",2019,6
+"124","adansi north",2020,4
+"125","adansi north",2021,4
+"126","adansi north",2022,4
+"127","adansi north",2023,5
+"128","adansi north",2024,9
+"129","adansi south",2005,6
+"130","adansi south",2006,1
+"131","adansi south",2008,2
+"132","adansi south",2010,3
+"133","adansi south",2011,4
+"134","adansi south",2012,2
+"135","adansi south",2013,1
+"136","adansi south",2014,4
+"137","adansi south",2016,4
+"138","adansi south",2017,1
+"139","adansi south",2018,12
+"140","adansi south",2019,7
+"141","adansi south",2020,4
+"142","adansi south",2021,7
+"143","adansi south",2022,9
+"144","adansi south",2023,17
+"145","adansi south",2024,6
+"146","adentan",2009,2
+"147","adentan",2010,1
+"148","adentan",2011,1
+"149","adentan",2018,1
+"150","adentan",2019,7
+"151","adentan",2020,1
+"152","adentan",2021,2
+"153","adentan",2022,4
+"154","adentan",2023,5
+"155","adentan",2024,8
+"156","afadjato south",2005,1
+"157","afadjato south",2009,1
+"158","afadjato south",2010,2
+"159","afadjato south",2011,6
+"160","afadjato south",2017,1
+"161","afadjato south",2018,3
+"162","afadjato south",2019,1
+"163","afadjato south",2020,1
+"164","afadjato south",2021,5
+"165","afadjato south",2022,4
+"166","afadjato south",2023,4
+"167","afadjato south",2024,3
+"168","afigya kwabre north",2012,1
+"169","afigya kwabre north",2014,2
+"170","afigya kwabre north",2016,1
+"171","afigya kwabre north",2017,3
+"172","afigya kwabre north",2019,2
+"173","afigya kwabre north",2020,3
+"174","afigya kwabre north",2021,3
+"175","afigya kwabre north",2022,4
+"176","afigya kwabre north",2023,2
+"177","afigya kwabre north",2024,3
+"178","afigya kwabre south",2008,1
+"179","afigya kwabre south",2011,1
+"180","afigya kwabre south",2013,1
+"181","afigya kwabre south",2019,10
+"182","afigya kwabre south",2021,8
+"183","afigya kwabre south",2022,11
+"184","afigya kwabre south",2023,10
+"185","afigya kwabre south",2024,5
+"186","afram plains south",2013,9
+"187","afram plains south",2014,1
+"188","afram plains south",2015,2
+"189","afram plains south",2018,1
+"190","afram plains south",2019,3
+"191","afram plains south",2021,5
+"192","afram plains south",2023,2
+"193","afram plains south",2024,7
+"194","agona east",2005,2
+"195","agona east",2009,1
+"196","agona east",2010,1
+"197","agona east",2011,2
+"198","agona east",2012,1
+"199","agona east",2013,1
+"200","agona east",2014,1
+"201","agona east",2015,1
+"202","agona east",2018,1
+"203","agona east",2019,1
+"204","agona east",2020,2
+"205","agona east",2021,2
+"206","agona east",2022,6
+"207","agona east",2023,11
+"208","agona east",2024,5
+"209","agona west",2009,1
+"210","agona west",2010,1
+"211","agona west",2011,1
+"212","agona west",2014,1
+"213","agona west",2017,5
+"214","agona west",2018,4
+"215","agona west",2019,4
+"216","agona west",2020,4
+"217","agona west",2021,4
+"218","agona west",2022,1
+"219","agona west",2023,1
+"220","agona west",2024,12
+"221","agortime ziope",2012,2
+"222","agortime ziope",2013,3
+"223","agortime ziope",2014,4
+"224","agortime ziope",2015,1
+"225","agortime ziope",2016,5
+"226","agortime ziope",2017,2
+"227","agortime ziope",2018,3
+"228","agortime ziope",2019,4
+"229","agortime ziope",2020,6
+"230","agortime ziope",2021,4
+"231","agortime ziope",2022,1
+"232","agortime ziope",2023,4
+"233","agortime ziope",2024,7
+"234","ahafo ano north",2005,6
+"235","ahafo ano north",2006,6
+"236","ahafo ano north",2008,1
+"237","ahafo ano north",2009,1
+"238","ahafo ano north",2010,1
+"239","ahafo ano north",2011,2
+"240","ahafo ano north",2012,4
+"241","ahafo ano north",2014,1
+"242","ahafo ano north",2015,5
+"243","ahafo ano north",2016,2
+"244","ahafo ano north",2017,9
+"245","ahafo ano north",2018,9
+"246","ahafo ano north",2019,6
+"247","ahafo ano north",2020,5
+"248","ahafo ano north",2021,4
+"249","ahafo ano north",2022,6
+"250","ahafo ano north",2023,4
+"251","ahafo ano north",2024,9
+"252","ahafo ano south east",2005,16
+"253","ahafo ano south east",2006,1
+"254","ahafo ano south east",2008,3
+"255","ahafo ano south east",2009,1
+"256","ahafo ano south east",2010,1
+"257","ahafo ano south east",2011,3
+"258","ahafo ano south east",2012,2
+"259","ahafo ano south east",2013,3
+"260","ahafo ano south east",2014,5
+"261","ahafo ano south east",2015,1
+"262","ahafo ano south east",2016,3
+"263","ahafo ano south east",2017,1
+"264","ahafo ano south east",2018,2
+"265","ahafo ano south east",2019,1
+"266","ahafo ano south east",2020,1
+"267","ahafo ano south east",2021,4
+"268","ahafo ano south east",2022,1
+"269","ahafo ano south east",2023,1
+"270","ahafo ano south east",2024,6
+"271","ahafo ano south west",2018,1
+"272","ahafo ano south west",2019,4
+"273","ahafo ano south west",2020,1
+"274","ahafo ano south west",2021,5
+"275","ahafo ano south west",2022,5
+"276","ahafo ano south west",2023,6
+"277","ahafo ano south west",2024,3
+"278","ahanta west",2005,1
+"279","ahanta west",2006,6
+"280","ahanta west",2008,2
+"281","ahanta west",2010,1
+"282","ahanta west",2011,1
+"283","ahanta west",2012,1
+"284","ahanta west",2013,3
+"285","ahanta west",2014,1
+"286","ahanta west",2015,6
+"287","ahanta west",2016,1
+"288","ahanta west",2017,4
+"289","ahanta west",2018,15
+"290","ahanta west",2019,6
+"291","ahanta west",2020,2
+"292","ahanta west",2021,23
+"293","ahanta west",2022,19
+"294","ahanta west",2023,13
+"295","ahanta west",2024,5
+"296","ajumako enyan essiam",2005,1
+"297","ajumako enyan essiam",2010,1
+"298","ajumako enyan essiam",2011,1
+"299","ajumako enyan essiam",2012,1
+"300","ajumako enyan essiam",2016,1
+"301","ajumako enyan essiam",2017,1
+"302","ajumako enyan essiam",2019,1
+"303","ajumako enyan essiam",2021,1
+"304","ajumako enyan essiam",2022,3
+"305","ajumako enyan essiam",2023,5
+"306","ajumako enyan essiam",2024,4
+"307","akatsi north",2006,1
+"308","akatsi north",2011,1
+"309","akatsi north",2014,2
+"310","akatsi north",2016,2
+"311","akatsi north",2017,3
+"312","akatsi north",2018,6
+"313","akatsi north",2019,2
+"314","akatsi north",2020,7
+"315","akatsi north",2021,2
+"316","akatsi north",2022,5
+"317","akatsi north",2023,1
+"318","akatsi north",2024,4
+"319","akatsi south",2014,3
+"320","akatsi south",2015,1
+"321","akatsi south",2016,1
+"322","akatsi south",2017,1
+"323","akatsi south",2018,5
+"324","akatsi south",2019,3
+"325","akatsi south",2020,2
+"326","akatsi south",2021,1
+"327","akatsi south",2022,4
+"328","akatsi south",2023,2
+"329","akatsi south",2024,3
+"330","akwapim north",2010,2
+"331","akwapim north",2011,2
+"332","akwapim north",2012,5
+"333","akwapim north",2013,2
+"334","akwapim north",2014,1
+"335","akwapim north",2015,1
+"336","akwapim north",2017,1
+"337","akwapim north",2018,2
+"338","akwapim north",2019,1
+"339","akwapim north",2020,1
+"340","akwapim north",2021,1
+"341","akwapim north",2023,1
+"342","akwapim north",2024,1
+"343","akwapim south",2006,1
+"344","akwapim south",2008,1
+"345","akwapim south",2010,2
+"346","akwapim south",2011,1
+"347","akwapim south",2013,2
+"348","akwapim south",2016,2
+"349","akwapim south",2017,3
+"350","akwapim south",2018,5
+"351","akwapim south",2019,4
+"352","akwapim south",2020,8
+"353","akwapim south",2021,5
+"354","akwapim south",2022,7
+"355","akwapim south",2023,11
+"356","akwapim south",2024,6
+"357","akyemansa",2005,4
+"358","akyemansa",2006,2
+"359","akyemansa",2010,2
+"360","akyemansa",2017,2
+"361","akyemansa",2018,2
+"362","akyemansa",2020,1
+"363","akyemansa",2021,2
+"364","akyemansa",2022,7
+"365","akyemansa",2023,2
+"366","akyemansa",2024,3
+"367","amansie central",2005,3
+"368","amansie central",2006,4
+"369","amansie central",2008,2
+"370","amansie central",2010,2
+"371","amansie central",2011,1
+"372","amansie central",2012,1
+"373","amansie central",2013,1
+"374","amansie central",2014,1
+"375","amansie central",2015,1
+"376","amansie central",2017,2
+"377","amansie central",2018,3
+"378","amansie central",2019,8
+"379","amansie central",2020,1
+"380","amansie central",2021,5
+"381","amansie central",2022,2
+"382","amansie central",2023,1
+"383","amansie central",2024,4
+"384","amansie south",2005,6
+"385","amansie south",2006,2
+"386","amansie south",2008,4
+"387","amansie south",2009,5
+"388","amansie south",2010,17
+"389","amansie south",2011,19
+"390","amansie south",2013,3
+"391","amansie south",2014,11
+"392","amansie south",2015,1
+"393","amansie south",2016,1
+"394","amansie south",2020,1
+"395","amansie south",2021,7
+"396","amansie south",2022,2
+"397","amansie south",2023,6
+"398","amansie south",2024,6
+"399","amansie west",2018,5
+"400","amansie west",2019,14
+"401","amansie west",2020,8
+"402","amansie west",2021,6
+"403","amansie west",2022,16
+"404","amansie west",2023,27
+"405","amansie west",2024,20
+"406","anloga",2005,3
+"407","anloga",2006,4
+"408","anloga",2009,8
+"409","anloga",2010,5
+"410","anloga",2011,1
+"411","anloga",2014,3
+"412","anloga",2016,4
+"413","anloga",2017,5
+"414","anloga",2018,4
+"415","anloga",2020,4
+"416","anloga",2021,4
+"417","anloga",2022,4
+"418","anloga",2023,1
+"419","anloga",2024,3
+"420","aowin",2006,2
+"421","aowin",2012,1
+"422","aowin",2014,2
+"423","aowin",2015,3
+"424","aowin",2017,6
+"425","aowin",2018,4
+"426","aowin",2019,6
+"427","aowin",2020,1
+"428","aowin",2021,6
+"429","aowin",2022,1
+"430","aowin",2023,4
+"431","aowin",2024,2
+"432","asante akim central",2005,3
+"433","asante akim central",2008,1
+"434","asante akim central",2010,3
+"435","asante akim central",2014,5
+"436","asante akim central",2018,2
+"437","asante akim central",2019,1
+"438","asante akim central",2020,1
+"439","asante akim central",2021,7
+"440","asante akim central",2022,3
+"441","asante akim central",2023,3
+"442","asante akim central",2024,2
+"443","asante akim north",2012,1
+"444","asante akim north",2014,3
+"445","asante akim north",2017,1
+"446","asante akim north",2018,7
+"447","asante akim north",2019,6
+"448","asante akim north",2020,8
+"449","asante akim north",2021,8
+"450","asante akim north",2022,4
+"451","asante akim north",2023,2
+"452","asante akim north",2024,7
+"453","asante akim south",2005,1
+"454","asante akim south",2006,3
+"455","asante akim south",2008,1
+"456","asante akim south",2009,5
+"457","asante akim south",2011,1
+"458","asante akim south",2012,1
+"459","asante akim south",2013,1
+"460","asante akim south",2014,1
+"461","asante akim south",2016,1
+"462","asante akim south",2017,3
+"463","asante akim south",2018,3
+"464","asante akim south",2019,5
+"465","asante akim south",2020,11
+"466","asante akim south",2021,8
+"467","asante akim south",2022,8
+"468","asante akim south",2023,11
+"469","asante akim south",2024,5
+"470","asante mampong",2005,3
+"471","asante mampong",2006,6
+"472","asante mampong",2009,3
+"473","asante mampong",2010,1
+"474","asante mampong",2011,1
+"475","asante mampong",2014,13
+"476","asante mampong",2015,11
+"477","asante mampong",2016,3
+"478","asante mampong",2017,6
+"479","asante mampong",2018,6
+"480","asante mampong",2019,4
+"481","asante mampong",2021,6
+"482","asante mampong",2022,2
+"483","asante mampong",2023,2
+"484","asante mampong",2024,2
+"485","asene manso akroso",2018,1
+"486","asene manso akroso",2021,2
+"487","ashaiman",2018,4
+"488","ashaiman",2019,2
+"489","ashaiman",2020,3
+"490","ashaiman",2021,7
+"491","ashaiman",2022,5
+"492","ashaiman",2024,5
+"493","asikuma odoben brakwa",2006,2
+"494","asikuma odoben brakwa",2008,2
+"495","asikuma odoben brakwa",2009,1
+"496","asikuma odoben brakwa",2015,2
+"497","asikuma odoben brakwa",2016,3
+"498","asikuma odoben brakwa",2017,1
+"499","asikuma odoben brakwa",2019,2
+"500","asikuma odoben brakwa",2020,1
+"501","asikuma odoben brakwa",2021,5
+"502","asikuma odoben brakwa",2022,6
+"503","asikuma odoben brakwa",2023,7
+"504","asikuma odoben brakwa",2024,9
+"505","asokore mampong",2005,5
+"506","asokore mampong",2006,6
+"507","asokore mampong",2008,6
+"508","asokore mampong",2009,4
+"509","asokore mampong",2010,1
+"510","asokore mampong",2011,9
+"511","asokore mampong",2020,1
+"512","asokore mampong",2021,3
+"513","asokore mampong",2022,2
+"514","asokore mampong",2024,1
+"515","asokwa",2012,5
+"516","asokwa",2013,2
+"517","asokwa",2014,2
+"518","asokwa",2015,1
+"519","asokwa",2016,5
+"520","asokwa",2017,1
+"521","asokwa",2020,2
+"522","asokwa",2021,2
+"523","asokwa",2022,7
+"524","asokwa",2023,2
+"525","asokwa",2024,3
+"526","assin foso",2005,2
+"527","assin foso",2009,1
+"528","assin foso",2011,1
+"529","assin foso",2013,1
+"530","assin foso",2014,3
+"531","assin foso",2016,1
+"532","assin foso",2017,2
+"533","assin foso",2020,8
+"534","assin foso",2021,6
+"535","assin foso",2022,10
+"536","assin foso",2023,17
+"537","assin foso",2024,18
+"538","assin north",2006,1
+"539","assin north",2008,1
+"540","assin north",2012,1
+"541","assin north",2013,4
+"542","assin north",2014,3
+"543","assin north",2015,4
+"544","assin north",2016,3
+"545","assin north",2017,1
+"546","assin north",2018,10
+"547","assin north",2019,11
+"548","assin north",2020,13
+"549","assin north",2021,14
+"550","assin north",2022,24
+"551","assin north",2023,22
+"552","assin north",2024,18
+"553","assin south",2005,1
+"554","assin south",2019,4
+"555","assin south",2020,4
+"556","assin south",2021,5
+"557","assin south",2022,5
+"558","assin south",2023,6
+"559","assin south",2024,10
+"560","asunafo north",2005,1
+"561","asunafo north",2011,1
+"562","asunafo north",2012,4
+"563","asunafo north",2013,4
+"564","asunafo north",2014,10
+"565","asunafo north",2015,22
+"566","asunafo north",2016,6
+"567","asunafo north",2017,19
+"568","asunafo north",2018,16
+"569","asunafo north",2019,12
+"570","asunafo north",2020,13
+"571","asunafo north",2021,42
+"572","asunafo north",2022,28
+"573","asunafo north",2023,19
+"574","asunafo north",2024,36
+"575","asunafo south",2006,1
+"576","asunafo south",2008,2
+"577","asunafo south",2012,5
+"578","asunafo south",2013,2
+"579","asunafo south",2014,3
+"580","asunafo south",2015,3
+"581","asunafo south",2016,3
+"582","asunafo south",2017,14
+"583","asunafo south",2018,15
+"584","asunafo south",2019,16
+"585","asunafo south",2020,2
+"586","asunafo south",2021,4
+"587","asunafo south",2022,2
+"588","asunafo south",2023,3
+"589","asunafo south",2024,4
+"590","asuogyaman",2006,2
+"591","asuogyaman",2008,3
+"592","asuogyaman",2009,1
+"593","asuogyaman",2013,1
+"594","asuogyaman",2017,1
+"595","asuogyaman",2018,3
+"596","asuogyaman",2019,5
+"597","asuogyaman",2020,3
+"598","asuogyaman",2021,6
+"599","asuogyaman",2022,4
+"600","asuogyaman",2023,5
+"601","asuogyaman",2024,3
+"602","asutifi north",2005,1
+"603","asutifi north",2008,3
+"604","asutifi north",2011,1
+"605","asutifi north",2013,8
+"606","asutifi north",2014,14
+"607","asutifi north",2015,6
+"608","asutifi north",2016,2
+"609","asutifi north",2017,5
+"610","asutifi north",2018,5
+"611","asutifi north",2019,3
+"612","asutifi north",2020,3
+"613","asutifi north",2021,3
+"614","asutifi north",2022,2
+"615","asutifi north",2023,1
+"616","asutifi north",2024,1
+"617","asutifi south",2014,12
+"618","asutifi south",2015,2
+"619","asutifi south",2016,2
+"620","asutifi south",2017,4
+"621","asutifi south",2018,10
+"622","asutifi south",2019,5
+"623","asutifi south",2020,3
+"624","asutifi south",2021,7
+"625","asutifi south",2022,4
+"626","asutifi south",2023,5
+"627","asutifi south",2024,4
+"628","atebubu amanten",2005,3
+"629","atebubu amanten",2006,3
+"630","atebubu amanten",2008,5
+"631","atebubu amanten",2012,4
+"632","atebubu amanten",2013,8
+"633","atebubu amanten",2014,4
+"634","atebubu amanten",2015,3
+"635","atebubu amanten",2016,4
+"636","atebubu amanten",2017,5
+"637","atebubu amanten",2018,7
+"638","atebubu amanten",2019,4
+"639","atebubu amanten",2020,8
+"640","atebubu amanten",2021,11
+"641","atebubu amanten",2022,4
+"642","atebubu amanten",2023,5
+"643","atebubu amanten",2024,4
+"644","atiwa east",2005,2
+"645","atiwa east",2006,3
+"646","atiwa east",2008,3
+"647","atiwa east",2017,1
+"648","atiwa east",2018,1
+"649","atiwa east",2019,3
+"650","atiwa east",2020,1
+"651","atiwa east",2021,4
+"652","atiwa east",2022,4
+"653","atiwa east",2023,4
+"654","atiwa east",2024,9
+"655","atiwa west",2009,4
+"656","atiwa west",2010,4
+"657","atiwa west",2011,1
+"658","atiwa west",2019,6
+"659","atiwa west",2020,11
+"660","atiwa west",2021,2
+"661","atiwa west",2022,6
+"662","atiwa west",2023,2
+"663","atwima kwanwoma",2005,1
+"664","atwima kwanwoma",2013,1
+"665","atwima kwanwoma",2015,1
+"666","atwima kwanwoma",2016,1
+"667","atwima kwanwoma",2017,1
+"668","atwima kwanwoma",2019,12
+"669","atwima kwanwoma",2020,1
+"670","atwima kwanwoma",2021,6
+"671","atwima kwanwoma",2022,3
+"672","atwima kwanwoma",2023,8
+"673","atwima kwanwoma",2024,5
+"674","atwima mponua",2005,12
+"675","atwima mponua",2006,5
+"676","atwima mponua",2008,2
+"677","atwima mponua",2009,3
+"678","atwima mponua",2010,1
+"679","atwima mponua",2011,4
+"680","atwima mponua",2012,5
+"681","atwima mponua",2013,3
+"682","atwima mponua",2014,1
+"683","atwima mponua",2015,2
+"684","atwima mponua",2016,4
+"685","atwima mponua",2017,4
+"686","atwima mponua",2018,2
+"687","atwima mponua",2019,8
+"688","atwima mponua",2020,2
+"689","atwima mponua",2021,8
+"690","atwima mponua",2022,10
+"691","atwima mponua",2023,14
+"692","atwima mponua",2024,7
+"693","atwima nwabiagya",2005,4
+"694","atwima nwabiagya",2006,32
+"695","atwima nwabiagya",2008,1
+"696","atwima nwabiagya",2012,2
+"697","atwima nwabiagya",2014,2
+"698","atwima nwabiagya",2015,2
+"699","atwima nwabiagya",2016,3
+"700","atwima nwabiagya",2017,1
+"701","atwima nwabiagya",2018,3
+"702","atwima nwabiagya",2019,5
+"703","atwima nwabiagya",2020,5
+"704","atwima nwabiagya",2021,3
+"705","atwima nwabiagya",2022,7
+"706","atwima nwabiagya",2023,5
+"707","atwima nwabiagya",2024,7
+"708","atwima nwabiagya north",2020,1
+"709","atwima nwabiagya north",2021,3
+"710","atwima nwabiagya north",2022,5
+"711","atwima nwabiagya north",2023,6
+"712","atwima nwabiagya north",2024,2
+"713","awutu senya",2015,2
+"714","awutu senya",2016,3
+"715","awutu senya",2017,3
+"716","awutu senya",2018,7
+"717","awutu senya",2021,2
+"718","awutu senya",2022,12
+"719","awutu senya",2023,19
+"720","awutu senya",2024,10
+"721","awutu senya east",2010,6
+"722","awutu senya east",2014,1
+"723","awutu senya east",2017,1
+"724","awutu senya east",2021,3
+"725","awutu senya east",2022,14
+"726","awutu senya east",2023,9
+"727","awutu senya east",2024,4
+"728","ayawaso central",2008,1
+"729","ayawaso central",2011,1
+"730","ayawaso central",2016,1
+"731","ayawaso central",2020,1
+"732","ayawaso central",2021,3
+"733","ayawaso central",2022,1
+"734","ayawaso central",2023,4
+"735","ayawaso central",2024,3
+"736","ayawaso east",2008,1
+"737","ayawaso east",2011,2
+"738","ayawaso east",2016,1
+"739","ayawaso east",2018,1
+"740","ayawaso east",2019,1
+"741","ayawaso east",2021,3
+"742","ayawaso east",2022,1
+"743","ayawaso east",2023,1
+"744","ayawaso east",2024,1
+"745","ayawaso north",2019,1
+"746","ayawaso north",2021,1
+"747","ayawaso north",2022,3
+"748","ayawaso north",2023,2
+"749","ayawaso north",2024,3
+"750","ayawaso west",2020,1
+"751","ayawaso west",2021,2
+"752","ayawaso west",2022,2
+"753","ayawaso west",2024,2
+"754","ayensuano",2005,1
+"755","ayensuano",2009,1
+"756","ayensuano",2011,2
+"757","ayensuano",2016,1
+"758","ayensuano",2017,1
+"759","ayensuano",2019,1
+"760","ayensuano",2020,4
+"761","ayensuano",2021,6
+"762","ayensuano",2022,7
+"763","ayensuano",2023,8
+"764","ayensuano",2024,6
+"765","banda",2005,1
+"766","banda",2006,6
+"767","banda",2008,3
+"768","banda",2009,4
+"769","banda",2010,3
+"770","banda",2011,5
+"771","banda",2013,7
+"772","banda",2014,15
+"773","banda",2015,3
+"774","banda",2016,8
+"775","banda",2017,10
+"776","banda",2018,10
+"777","banda",2019,6
+"778","banda",2020,4
+"779","banda",2021,28
+"780","banda",2022,5
+"781","banda",2023,3
+"782","banda",2024,2
+"783","bawku municipal",2005,9
+"784","bawku municipal",2006,11
+"785","bawku municipal",2008,2
+"786","bawku municipal",2009,5
+"787","bawku municipal",2010,5
+"788","bawku municipal",2011,11
+"789","bawku municipal",2012,1
+"790","bawku municipal",2013,3
+"791","bawku municipal",2014,2
+"792","bawku municipal",2015,1
+"793","bawku municipal",2016,3
+"794","bawku municipal",2017,5
+"795","bawku municipal",2018,7
+"796","bawku municipal",2019,6
+"797","bawku municipal",2020,6
+"798","bawku municipal",2021,6
+"799","bawku municipal",2022,4
+"800","bawku west",2006,3
+"801","bawku west",2008,7
+"802","bawku west",2009,8
+"803","bawku west",2010,3
+"804","bawku west",2011,7
+"805","bawku west",2012,3
+"806","bawku west",2013,3
+"807","bawku west",2014,1
+"808","bawku west",2016,3
+"809","bawku west",2017,5
+"810","bawku west",2018,5
+"811","bawku west",2019,1
+"812","bawku west",2020,5
+"813","bawku west",2021,9
+"814","bawku west",2022,3
+"815","bawku west",2023,8
+"816","bawku west",2024,3
+"817","bekwai",2005,2
+"818","bekwai",2006,6
+"819","bekwai",2009,2
+"820","bekwai",2010,2
+"821","bekwai",2011,6
+"822","bekwai",2012,1
+"823","bekwai",2013,2
+"824","bekwai",2018,3
+"825","bekwai",2019,4
+"826","bekwai",2020,1
+"827","bekwai",2021,2
+"828","bekwai",2022,5
+"829","bekwai",2023,2
+"830","bekwai",2024,1
+"831","berekum",2006,1
+"832","berekum",2008,2
+"833","berekum",2012,7
+"834","berekum",2013,9
+"835","berekum",2014,4
+"836","berekum",2015,6
+"837","berekum",2016,6
+"838","berekum",2017,5
+"839","berekum",2018,5
+"840","berekum",2019,5
+"841","berekum",2020,8
+"842","berekum",2021,1
+"843","berekum",2022,7
+"844","berekum",2023,2
+"845","berekum",2024,2
+"846","berekum west",2020,1
+"847","berekum west",2021,6
+"848","berekum west",2022,6
+"849","berekum west",2023,9
+"850","berekum west",2024,7
+"851","bia east",2006,11
+"852","bia east",2008,2
+"853","bia east",2010,3
+"854","bia east",2015,2
+"855","bia east",2016,3
+"856","bia east",2017,5
+"857","bia east",2018,5
+"858","bia east",2019,1
+"859","bia east",2020,5
+"860","bia east",2021,3
+"861","bia east",2022,9
+"862","bia east",2023,6
+"863","bia east",2024,2
+"864","bia west",2012,2
+"865","bia west",2013,2
+"866","bia west",2014,1
+"867","bia west",2015,3
+"868","bia west",2016,3
+"869","bia west",2017,3
+"870","bia west",2018,7
+"871","bia west",2019,2
+"872","bia west",2020,3
+"873","bia west",2021,9
+"874","bia west",2022,3
+"875","bia west",2023,3
+"876","bia west",2024,3
+"877","biakoye",2010,2
+"878","biakoye",2011,4
+"879","biakoye",2012,2
+"880","biakoye",2013,1
+"881","biakoye",2014,4
+"882","biakoye",2015,4
+"883","biakoye",2016,8
+"884","biakoye",2017,8
+"885","biakoye",2018,3
+"886","biakoye",2019,10
+"887","biakoye",2020,10
+"888","biakoye",2021,7
+"889","biakoye",2022,5
+"890","biakoye",2023,4
+"891","biakoye",2024,5
+"892","bibiani anhwiaso bekwai",2005,5
+"893","bibiani anhwiaso bekwai",2006,8
+"894","bibiani anhwiaso bekwai",2008,4
+"895","bibiani anhwiaso bekwai",2009,1
+"896","bibiani anhwiaso bekwai",2010,1
+"897","bibiani anhwiaso bekwai",2014,1
+"898","bibiani anhwiaso bekwai",2016,1
+"899","bibiani anhwiaso bekwai",2017,5
+"900","bibiani anhwiaso bekwai",2018,4
+"901","bibiani anhwiaso bekwai",2019,3
+"902","bibiani anhwiaso bekwai",2020,1
+"903","bibiani anhwiaso bekwai",2022,3
+"904","bibiani anhwiaso bekwai",2023,2
+"905","bibiani anhwiaso bekwai",2024,1
+"906","binduri",2013,1
+"907","binduri",2014,2
+"908","binduri",2015,2
+"909","binduri",2016,4
+"910","binduri",2017,1
+"911","binduri",2018,3
+"912","binduri",2019,3
+"913","binduri",2020,17
+"914","binduri",2021,9
+"915","binduri",2022,7
+"916","binduri",2023,4
+"917","binduri",2024,2
+"918","birim central",2019,5
+"919","birim central",2020,2
+"920","birim central",2021,1
+"921","birim central",2022,1
+"922","birim central",2023,2
+"923","birim central",2024,1
+"924","birim north",2008,1
+"925","birim north",2010,1
+"926","birim north",2012,2
+"927","birim north",2014,1
+"928","birim north",2017,1
+"929","birim north",2019,2
+"930","birim north",2020,2
+"931","birim north",2021,4
+"932","birim north",2022,2
+"933","birim north",2023,2
+"934","birim south",2008,1
+"935","birim south",2012,2
+"936","birim south",2014,2
+"937","birim south",2016,3
+"938","birim south",2017,3
+"939","birim south",2018,1
+"940","birim south",2019,1
+"941","birim south",2020,2
+"942","birim south",2021,3
+"943","birim south",2022,1
+"944","birim south",2023,3
+"945","birim south",2024,4
+"946","bodi",2014,1
+"947","bodi",2015,2
+"948","bodi",2016,2
+"949","bodi",2017,3
+"950","bodi",2018,9
+"951","bodi",2019,10
+"952","bodi",2020,4
+"953","bodi",2021,13
+"954","bodi",2022,2
+"955","bodi",2023,8
+"956","bodi",2024,13
+"957","bole",2005,13
+"958","bole",2006,1
+"959","bole",2008,3
+"960","bole",2009,1
+"961","bole",2010,10
+"962","bole",2011,16
+"963","bole",2012,4
+"964","bole",2013,1
+"965","bole",2014,1
+"966","bole",2015,2
+"967","bole",2016,1
+"968","bole",2017,1
+"969","bole",2018,7
+"970","bole",2019,7
+"971","bole",2020,6
+"972","bole",2021,25
+"973","bole",2022,8
+"974","bole",2023,3
+"975","bole",2024,4
+"976","bolgatanga east",2020,9
+"977","bolgatanga east",2021,8
+"978","bolgatanga east",2022,21
+"979","bolgatanga east",2023,9
+"980","bolgatanga east",2024,7
+"981","bolgatanga municipal",2005,3
+"982","bolgatanga municipal",2006,1
+"983","bolgatanga municipal",2009,2
+"984","bolgatanga municipal",2010,1
+"985","bolgatanga municipal",2011,9
+"986","bolgatanga municipal",2012,2
+"987","bolgatanga municipal",2013,1
+"988","bolgatanga municipal",2015,6
+"989","bolgatanga municipal",2016,4
+"990","bolgatanga municipal",2017,6
+"991","bolgatanga municipal",2018,8
+"992","bolgatanga municipal",2019,4
+"993","bolgatanga municipal",2020,4
+"994","bolgatanga municipal",2021,9
+"995","bolgatanga municipal",2022,8
+"996","bolgatanga municipal",2023,14
+"997","bolgatanga municipal",2024,25
+"998","bongo",2005,7
+"999","bongo",2009,3
+"1000","bongo",2011,7
+"1001","bongo",2012,4
+"1002","bongo",2013,1
+"1003","bongo",2014,2
+"1004","bongo",2015,1
+"1005","bongo",2016,5
+"1006","bongo",2017,9
+"1007","bongo",2018,11
+"1008","bongo",2019,13
+"1009","bongo",2020,11
+"1010","bongo",2021,13
+"1011","bongo",2022,41
+"1012","bongo",2023,40
+"1013","bongo",2024,91
+"1014","bosome freho",2008,1
+"1015","bosome freho",2009,2
+"1016","bosome freho",2010,10
+"1017","bosome freho",2011,4
+"1018","bosome freho",2012,6
+"1019","bosome freho",2013,6
+"1020","bosome freho",2014,4
+"1021","bosome freho",2015,2
+"1022","bosome freho",2016,2
+"1023","bosome freho",2017,1
+"1024","bosome freho",2018,2
+"1025","bosome freho",2019,13
+"1026","bosome freho",2020,6
+"1027","bosome freho",2021,15
+"1028","bosome freho",2022,15
+"1029","bosome freho",2023,5
+"1030","bosome freho",2024,19
+"1031","bosomtwe",2009,1
+"1032","bosomtwe",2010,1
+"1033","bosomtwe",2011,3
+"1034","bosomtwe",2012,3
+"1035","bosomtwe",2013,4
+"1036","bosomtwe",2014,1
+"1037","bosomtwe",2016,2
+"1038","bosomtwe",2017,4
+"1039","bosomtwe",2018,6
+"1040","bosomtwe",2019,3
+"1041","bosomtwe",2020,2
+"1042","bosomtwe",2021,13
+"1043","bosomtwe",2022,10
+"1044","bosomtwe",2023,7
+"1045","bosomtwe",2024,6
+"1046","builsa north",2005,3
+"1047","builsa north",2009,3
+"1048","builsa north",2010,2
+"1049","builsa north",2011,10
+"1050","builsa north",2013,3
+"1051","builsa north",2014,1
+"1052","builsa north",2015,1
+"1053","builsa north",2017,2
+"1054","builsa north",2018,3
+"1055","builsa north",2019,4
+"1056","builsa north",2020,2
+"1057","builsa north",2021,3
+"1058","builsa north",2022,4
+"1059","builsa north",2023,3
+"1060","builsa north",2024,4
+"1061","builsa south",2008,1
+"1062","builsa south",2009,2
+"1063","builsa south",2013,2
+"1064","builsa south",2014,4
+"1065","builsa south",2015,4
+"1066","builsa south",2016,2
+"1067","builsa south",2017,1
+"1068","builsa south",2018,4
+"1069","builsa south",2019,4
+"1070","builsa south",2020,2
+"1071","builsa south",2021,4
+"1072","builsa south",2022,2
+"1073","builsa south",2023,2
+"1074","builsa south",2024,1
+"1075","bunkpurugu nakpanduri",2005,5
+"1076","bunkpurugu nakpanduri",2008,2
+"1077","bunkpurugu nakpanduri",2009,1
+"1078","bunkpurugu nakpanduri",2010,8
+"1079","bunkpurugu nakpanduri",2011,3
+"1080","bunkpurugu nakpanduri",2012,4
+"1081","bunkpurugu nakpanduri",2013,1
+"1082","bunkpurugu nakpanduri",2014,1
+"1083","bunkpurugu nakpanduri",2016,2
+"1084","bunkpurugu nakpanduri",2017,4
+"1085","bunkpurugu nakpanduri",2018,6
+"1086","bunkpurugu nakpanduri",2019,9
+"1087","bunkpurugu nakpanduri",2020,1
+"1088","bunkpurugu nakpanduri",2021,3
+"1089","bunkpurugu nakpanduri",2022,6
+"1090","bunkpurugu nakpanduri",2023,3
+"1091","bunkpurugu nakpanduri",2024,4
+"1092","cape coast",2005,9
+"1093","cape coast",2009,1
+"1094","cape coast",2010,1
+"1095","cape coast",2011,6
+"1096","cape coast",2014,8
+"1097","cape coast",2015,1
+"1098","cape coast",2017,1
+"1099","cape coast",2018,3
+"1100","cape coast",2019,9
+"1101","cape coast",2020,2
+"1102","cape coast",2021,4
+"1103","cape coast",2022,10
+"1104","cape coast",2023,15
+"1105","cape coast",2024,18
+"1106","central gonja",2006,1
+"1107","central gonja",2010,1
+"1108","central gonja",2011,7
+"1109","central gonja",2012,5
+"1110","central gonja",2014,1
+"1111","central gonja",2017,4
+"1112","central gonja",2018,1
+"1113","central gonja",2019,8
+"1114","central gonja",2020,6
+"1115","central gonja",2021,13
+"1116","central gonja",2022,6
+"1117","central gonja",2023,4
+"1118","central gonja",2024,8
+"1119","central tongu",2005,1
+"1120","central tongu",2006,2
+"1121","central tongu",2008,5
+"1122","central tongu",2009,1
+"1123","central tongu",2010,5
+"1124","central tongu",2011,6
+"1125","central tongu",2013,3
+"1126","central tongu",2014,1
+"1127","central tongu",2016,1
+"1128","central tongu",2017,4
+"1129","central tongu",2018,6
+"1130","central tongu",2019,6
+"1131","central tongu",2020,1
+"1132","central tongu",2021,1
+"1133","central tongu",2022,4
+"1134","central tongu",2023,8
+"1135","central tongu",2024,5
+"1136","chereponi",2006,1
+"1137","chereponi",2011,1
+"1138","chereponi",2015,1
+"1139","chereponi",2017,1
+"1140","chereponi",2018,2
+"1141","chereponi",2019,3
+"1142","chereponi",2020,1
+"1143","chereponi",2021,5
+"1144","chereponi",2022,1
+"1145","chereponi",2023,2
+"1146","chereponi",2024,1
+"1147","daffiama bussie issa",2005,27
+"1148","daffiama bussie issa",2006,12
+"1149","daffiama bussie issa",2008,2
+"1150","daffiama bussie issa",2010,1
+"1151","daffiama bussie issa",2011,24
+"1152","daffiama bussie issa",2012,1
+"1153","daffiama bussie issa",2013,4
+"1154","daffiama bussie issa",2014,3
+"1155","daffiama bussie issa",2017,5
+"1156","daffiama bussie issa",2018,2
+"1157","daffiama bussie issa",2019,2
+"1158","daffiama bussie issa",2020,1
+"1159","daffiama bussie issa",2021,5
+"1160","daffiama bussie issa",2022,20
+"1161","daffiama bussie issa",2023,15
+"1162","daffiama bussie issa",2024,8
+"1163","denkyembour",2011,1
+"1164","denkyembour",2013,3
+"1165","denkyembour",2016,1
+"1166","denkyembour",2017,2
+"1167","denkyembour",2018,1
+"1168","denkyembour",2019,2
+"1169","denkyembour",2020,1
+"1170","denkyembour",2021,7
+"1171","denkyembour",2022,3
+"1172","denkyembour",2023,4
+"1173","denkyembour",2024,2
+"1174","dormaa east",2011,2
+"1175","dormaa east",2012,2
+"1176","dormaa east",2013,4
+"1177","dormaa east",2014,6
+"1178","dormaa east",2015,4
+"1179","dormaa east",2016,2
+"1180","dormaa east",2017,10
+"1181","dormaa east",2018,11
+"1182","dormaa east",2019,5
+"1183","dormaa east",2020,3
+"1184","dormaa east",2021,3
+"1185","dormaa east",2023,5
+"1186","dormaa east",2024,1
+"1187","dormaa municipal",2008,8
+"1188","dormaa municipal",2011,1
+"1189","dormaa municipal",2012,1
+"1190","dormaa municipal",2013,6
+"1191","dormaa municipal",2014,5
+"1192","dormaa municipal",2015,5
+"1193","dormaa municipal",2016,4
+"1194","dormaa municipal",2017,4
+"1195","dormaa municipal",2018,4
+"1196","dormaa municipal",2019,2
+"1197","dormaa municipal",2020,2
+"1198","dormaa municipal",2021,2
+"1199","dormaa municipal",2023,1
+"1200","dormaa municipal",2024,1
+"1201","dormaa west",2013,4
+"1202","dormaa west",2014,7
+"1203","dormaa west",2015,7
+"1204","dormaa west",2016,4
+"1205","dormaa west",2017,2
+"1206","dormaa west",2018,3
+"1207","dormaa west",2019,8
+"1208","dormaa west",2020,2
+"1209","dormaa west",2021,8
+"1210","dormaa west",2022,2
+"1211","dormaa west",2023,2
+"1212","dormaa west",2024,5
+"1213","east akim abuakwa south",2019,3
+"1214","east akim abuakwa south",2020,1
+"1215","east akim abuakwa south",2021,5
+"1216","east akim abuakwa south",2024,1
+"1217","east gonja",2005,2
+"1218","east gonja",2006,3
+"1219","east gonja",2008,3
+"1220","east gonja",2009,3
+"1221","east gonja",2010,3
+"1222","east gonja",2011,2
+"1223","east gonja",2013,1
+"1224","east gonja",2017,1
+"1225","east gonja",2018,2
+"1226","east gonja",2019,2
+"1227","east gonja",2020,4
+"1228","east gonja",2021,2
+"1229","east gonja",2022,13
+"1230","east gonja",2023,2
+"1231","east gonja",2024,4
+"1232","east mamprusi",2018,2
+"1233","east mamprusi",2019,4
+"1234","east mamprusi",2020,6
+"1235","east mamprusi",2021,8
+"1236","east mamprusi",2022,8
+"1237","east mamprusi",2023,4
+"1238","east mamprusi",2024,12
+"1239","effia kwesimintsim",2010,1
+"1240","effia kwesimintsim",2013,1
+"1241","effia kwesimintsim",2015,2
+"1242","effia kwesimintsim",2016,3
+"1243","effia kwesimintsim",2017,5
+"1244","effia kwesimintsim",2020,2
+"1245","effia kwesimintsim",2021,7
+"1246","effia kwesimintsim",2022,6
+"1247","effia kwesimintsim",2023,4
+"1248","effia kwesimintsim",2024,5
+"1249","efutu",2010,1
+"1250","efutu",2014,1
+"1251","efutu",2018,2
+"1252","efutu",2019,3
+"1253","efutu",2020,2
+"1254","efutu",2021,2
+"1255","efutu",2022,2
+"1256","efutu",2023,4
+"1257","efutu",2024,8
+"1258","ejisu",2005,2
+"1259","ejisu",2006,3
+"1260","ejisu",2010,3
+"1261","ejisu",2011,5
+"1262","ejisu",2012,1
+"1263","ejisu",2014,2
+"1264","ejisu",2015,1
+"1265","ejisu",2016,2
+"1266","ejisu",2018,2
+"1267","ejisu",2020,1
+"1268","ejisu",2021,2
+"1269","ejisu",2022,4
+"1270","ejisu",2023,4
+"1271","ejisu",2024,2
+"1272","ejura sekyedumase",2005,2
+"1273","ejura sekyedumase",2006,9
+"1274","ejura sekyedumase",2008,3
+"1275","ejura sekyedumase",2009,1
+"1276","ejura sekyedumase",2010,2
+"1277","ejura sekyedumase",2011,1
+"1278","ejura sekyedumase",2012,1
+"1279","ejura sekyedumase",2014,3
+"1280","ejura sekyedumase",2015,3
+"1281","ejura sekyedumase",2016,1
+"1282","ejura sekyedumase",2017,4
+"1283","ejura sekyedumase",2018,3
+"1284","ejura sekyedumase",2019,4
+"1285","ejura sekyedumase",2020,5
+"1286","ejura sekyedumase",2021,4
+"1287","ejura sekyedumase",2022,5
+"1288","ejura sekyedumase",2023,4
+"1289","ejura sekyedumase",2024,5
+"1290","ekumfi",2014,1
+"1291","ekumfi",2016,2
+"1292","ekumfi",2017,1
+"1293","ekumfi",2018,4
+"1294","ekumfi",2019,2
+"1295","ekumfi",2020,6
+"1296","ekumfi",2021,2
+"1297","ekumfi",2022,4
+"1298","ekumfi",2023,6
+"1299","ekumfi",2024,5
+"1300","ellembelle",2010,8
+"1301","ellembelle",2011,2
+"1302","ellembelle",2013,1
+"1303","ellembelle",2014,7
+"1304","ellembelle",2015,8
+"1305","ellembelle",2016,3
+"1306","ellembelle",2017,5
+"1307","ellembelle",2018,5
+"1308","ellembelle",2019,6
+"1309","ellembelle",2020,3
+"1310","ellembelle",2021,13
+"1311","ellembelle",2022,10
+"1312","ellembelle",2023,10
+"1313","ellembelle",2024,16
+"1314","fanteakwa north",2005,1
+"1315","fanteakwa north",2009,4
+"1316","fanteakwa north",2010,2
+"1317","fanteakwa north",2014,2
+"1318","fanteakwa north",2016,3
+"1319","fanteakwa north",2017,3
+"1320","fanteakwa north",2018,1
+"1321","fanteakwa north",2019,2
+"1322","fanteakwa north",2022,3
+"1323","fanteakwa north",2023,6
+"1324","fanteakwa north",2024,4
+"1325","fanteakwa south",2018,2
+"1326","fanteakwa south",2019,1
+"1327","fanteakwa south",2020,4
+"1328","fanteakwa south",2021,5
+"1329","fanteakwa south",2022,2
+"1330","fanteakwa south",2023,3
+"1331","fanteakwa south",2024,2
+"1332","ga central",2011,2
+"1333","ga central",2016,1
+"1334","ga central",2020,5
+"1335","ga central",2021,7
+"1336","ga central",2022,1
+"1337","ga central",2023,1
+"1338","ga central",2024,4
+"1339","ga east",2006,2
+"1340","ga east",2008,3
+"1341","ga east",2010,1
+"1342","ga east",2011,2
+"1343","ga east",2013,2
+"1344","ga east",2016,1
+"1345","ga east",2017,3
+"1346","ga east",2018,6
+"1347","ga east",2019,8
+"1348","ga east",2020,5
+"1349","ga east",2021,9
+"1350","ga east",2022,1
+"1351","ga east",2023,10
+"1352","ga east",2024,9
+"1353","ga north",2015,2
+"1354","ga north",2016,1
+"1355","ga north",2017,9
+"1356","ga north",2020,2
+"1357","ga north",2021,5
+"1358","ga north",2022,6
+"1359","ga north",2023,3
+"1360","ga south",2012,1
+"1361","ga south",2015,1
+"1362","ga south",2016,2
+"1363","ga south",2017,2
+"1364","ga south",2018,12
+"1365","ga south",2019,15
+"1366","ga south",2020,4
+"1367","ga south",2021,10
+"1368","ga south",2022,16
+"1369","ga south",2023,15
+"1370","ga south",2024,18
+"1371","ga west",2018,26
+"1372","ga west",2019,16
+"1373","ga west",2020,4
+"1374","ga west",2021,8
+"1375","ga west",2022,20
+"1376","ga west",2023,11
+"1377","ga west",2024,20
+"1378","garu",2005,4
+"1379","garu",2006,6
+"1380","garu",2008,2
+"1381","garu",2009,3
+"1382","garu",2010,17
+"1383","garu",2011,4
+"1384","garu",2012,1
+"1385","garu",2013,11
+"1386","garu",2014,3
+"1387","garu",2015,4
+"1388","garu",2016,6
+"1389","garu",2017,4
+"1390","garu",2018,1
+"1391","garu",2019,3
+"1392","garu",2020,3
+"1393","garu",2021,7
+"1394","garu",2022,5
+"1395","garu",2023,3
+"1396","gomoa central",2005,1
+"1397","gomoa central",2010,1
+"1398","gomoa central",2017,2
+"1399","gomoa central",2020,2
+"1400","gomoa central",2021,2
+"1401","gomoa central",2022,2
+"1402","gomoa central",2023,9
+"1403","gomoa central",2024,2
+"1404","gomoa east",2019,1
+"1405","gomoa east",2020,4
+"1406","gomoa east",2021,3
+"1407","gomoa east",2022,9
+"1408","gomoa east",2023,9
+"1409","gomoa east",2024,4
+"1410","gomoa west",2008,1
+"1411","gomoa west",2012,1
+"1412","gomoa west",2014,1
+"1413","gomoa west",2015,1
+"1414","gomoa west",2019,8
+"1415","gomoa west",2020,6
+"1416","gomoa west",2021,13
+"1417","gomoa west",2022,9
+"1418","gomoa west",2023,4
+"1419","gomoa west",2024,3
+"1420","guan district",2012,1
+"1421","guan district",2013,1
+"1422","guan district",2015,1
+"1423","guan district",2017,7
+"1424","guan district",2018,3
+"1425","guan district",2019,8
+"1426","guan district",2020,1
+"1427","guan district",2024,17
+"1428","gushiegu",2008,2
+"1429","gushiegu",2009,2
+"1430","gushiegu",2011,1
+"1431","gushiegu",2014,2
+"1432","gushiegu",2015,1
+"1433","gushiegu",2016,1
+"1434","gushiegu",2017,1
+"1435","gushiegu",2018,2
+"1436","gushiegu",2019,2
+"1437","gushiegu",2020,5
+"1438","gushiegu",2021,5
+"1439","gushiegu",2022,5
+"1440","gushiegu",2023,10
+"1441","gushiegu",2024,14
+"1442","ho",2010,1
+"1443","ho",2011,2
+"1444","ho",2013,1
+"1445","ho",2014,3
+"1446","ho",2015,2
+"1447","ho",2016,3
+"1448","ho",2017,5
+"1449","ho",2018,2
+"1450","ho",2019,2
+"1451","ho",2020,2
+"1452","ho",2021,4
+"1453","ho",2023,3
+"1454","ho",2024,2
+"1455","ho west",2014,2
+"1456","ho west",2016,3
+"1457","ho west",2017,6
+"1458","ho west",2018,1
+"1459","ho west",2019,3
+"1460","ho west",2020,2
+"1461","ho west",2022,2
+"1462","ho west",2023,3
+"1463","ho west",2024,5
+"1464","hohoe",2021,5
+"1465","hohoe",2022,2
+"1466","hohoe",2023,3
+"1467","hohoe",2024,7
+"1468","jaman north",2008,2
+"1469","jaman north",2009,1
+"1470","jaman north",2010,1
+"1471","jaman north",2012,2
+"1472","jaman north",2013,2
+"1473","jaman north",2014,5
+"1474","jaman north",2015,1
+"1475","jaman north",2016,11
+"1476","jaman north",2017,4
+"1477","jaman north",2018,1
+"1478","jaman north",2019,3
+"1479","jaman north",2020,1
+"1480","jaman north",2021,2
+"1481","jaman north",2022,9
+"1482","jaman north",2023,13
+"1483","jaman north",2024,14
+"1484","jaman south",2008,1
+"1485","jaman south",2010,3
+"1486","jaman south",2011,3
+"1487","jaman south",2012,8
+"1488","jaman south",2013,3
+"1489","jaman south",2014,10
+"1490","jaman south",2015,7
+"1491","jaman south",2016,31
+"1492","jaman south",2017,7
+"1493","jaman south",2018,9
+"1494","jaman south",2019,13
+"1495","jaman south",2020,4
+"1496","jaman south",2021,7
+"1497","jaman south",2022,7
+"1498","jaman south",2023,2
+"1499","jaman south",2024,3
+"1500","jasikan",2009,1
+"1501","jasikan",2010,2
+"1502","jasikan",2011,1
+"1503","jasikan",2012,1
+"1504","jasikan",2013,2
+"1505","jasikan",2016,2
+"1506","jasikan",2017,4
+"1507","jasikan",2018,2
+"1508","jasikan",2019,1
+"1509","jasikan",2020,5
+"1510","jasikan",2021,7
+"1511","jasikan",2022,6
+"1512","jasikan",2023,5
+"1513","jasikan",2024,5
+"1514","jirapa",2005,119
+"1515","jirapa",2006,3
+"1516","jirapa",2008,1
+"1517","jirapa",2010,11
+"1518","jirapa",2011,7
+"1519","jirapa",2012,2
+"1520","jirapa",2013,10
+"1521","jirapa",2014,6
+"1522","jirapa",2017,3
+"1523","jirapa",2018,2
+"1524","jirapa",2019,4
+"1525","jirapa",2020,14
+"1526","jirapa",2021,22
+"1527","jirapa",2022,22
+"1528","jirapa",2023,15
+"1529","jirapa",2024,17
+"1530","jomoro",2005,4
+"1531","jomoro",2006,1
+"1532","jomoro",2010,1
+"1533","jomoro",2011,1
+"1534","jomoro",2012,1
+"1535","jomoro",2013,2
+"1536","jomoro",2014,1
+"1537","jomoro",2015,2
+"1538","jomoro",2016,3
+"1539","jomoro",2017,6
+"1540","jomoro",2018,11
+"1541","jomoro",2019,4
+"1542","jomoro",2020,1
+"1543","jomoro",2021,8
+"1544","jomoro",2022,15
+"1545","jomoro",2023,6
+"1546","jomoro",2024,6
+"1547","juaben",2018,2
+"1548","juaben",2020,6
+"1549","juaben",2021,8
+"1550","juaben",2022,5
+"1551","juaben",2023,1
+"1552","juaben",2024,1
+"1553","juaboso",2005,4
+"1554","juaboso",2006,21
+"1555","juaboso",2009,2
+"1556","juaboso",2010,1
+"1557","juaboso",2011,1
+"1558","juaboso",2012,1
+"1559","juaboso",2014,3
+"1560","juaboso",2015,1
+"1561","juaboso",2016,2
+"1562","juaboso",2017,3
+"1563","juaboso",2018,2
+"1564","juaboso",2019,3
+"1565","juaboso",2020,3
+"1566","juaboso",2021,7
+"1567","juaboso",2022,1
+"1568","juaboso",2023,9
+"1569","juaboso",2024,7
+"1570","kadjebi",2005,2
+"1571","kadjebi",2010,2
+"1572","kadjebi",2011,2
+"1573","kadjebi",2012,1
+"1574","kadjebi",2013,2
+"1575","kadjebi",2014,2
+"1576","kadjebi",2015,1
+"1577","kadjebi",2016,1
+"1578","kadjebi",2017,3
+"1579","kadjebi",2018,2
+"1580","kadjebi",2019,7
+"1581","kadjebi",2020,3
+"1582","kadjebi",2021,5
+"1583","kadjebi",2022,21
+"1584","kadjebi",2023,17
+"1585","kadjebi",2024,9
+"1586","karaga",2005,1
+"1587","karaga",2006,1
+"1588","karaga",2008,4
+"1589","karaga",2009,1
+"1590","karaga",2011,2
+"1591","karaga",2012,2
+"1592","karaga",2014,1
+"1593","karaga",2015,3
+"1594","karaga",2016,4
+"1595","karaga",2017,3
+"1596","karaga",2018,8
+"1597","karaga",2019,31
+"1598","karaga",2020,26
+"1599","karaga",2021,26
+"1600","karaga",2022,29
+"1601","karaga",2023,7
+"1602","karaga",2024,5
+"1603","kasena nankana",2006,2
+"1604","kasena nankana",2008,1
+"1605","kasena nankana",2009,1
+"1606","kasena nankana",2010,1
+"1607","kasena nankana",2011,4
+"1608","kasena nankana",2012,1
+"1609","kasena nankana",2013,1
+"1610","kasena nankana",2015,1
+"1611","kasena nankana",2016,1
+"1612","kasena nankana",2017,5
+"1613","kasena nankana",2018,1
+"1614","kasena nankana",2019,1
+"1615","kasena nankana",2020,2
+"1616","kasena nankana",2021,8
+"1617","kasena nankana",2022,15
+"1618","kasena nankana",2023,11
+"1619","kasena nankana",2024,16
+"1620","kasena nankana west",2009,1
+"1621","kasena nankana west",2010,3
+"1622","kasena nankana west",2011,11
+"1623","kasena nankana west",2012,3
+"1624","kasena nankana west",2013,3
+"1625","kasena nankana west",2014,5
+"1626","kasena nankana west",2015,1
+"1627","kasena nankana west",2016,1
+"1628","kasena nankana west",2017,4
+"1629","kasena nankana west",2018,6
+"1630","kasena nankana west",2019,4
+"1631","kasena nankana west",2020,1
+"1632","kasena nankana west",2021,12
+"1633","kasena nankana west",2022,5
+"1634","kasena nankana west",2023,13
+"1635","kasena nankana west",2024,6
+"1636","keta",2019,3
+"1637","keta",2021,1
+"1638","keta",2022,2
+"1639","keta",2023,2
+"1640","keta",2024,3
+"1641","ketu north",2005,1
+"1642","ketu north",2006,2
+"1643","ketu north",2010,2
+"1644","ketu north",2011,2
+"1645","ketu north",2013,6
+"1646","ketu north",2014,3
+"1647","ketu north",2015,3
+"1648","ketu north",2016,5
+"1649","ketu north",2017,10
+"1650","ketu north",2018,2
+"1651","ketu north",2019,2
+"1652","ketu north",2020,5
+"1653","ketu north",2021,8
+"1654","ketu north",2022,1
+"1655","ketu north",2023,3
+"1656","ketu north",2024,3
+"1657","ketu south",2009,1
+"1658","ketu south",2010,3
+"1659","ketu south",2011,4
+"1660","ketu south",2012,3
+"1661","ketu south",2014,4
+"1662","ketu south",2015,3
+"1663","ketu south",2016,1
+"1664","ketu south",2017,9
+"1665","ketu south",2018,13
+"1666","ketu south",2019,5
+"1667","ketu south",2020,3
+"1668","ketu south",2021,11
+"1669","ketu south",2022,4
+"1670","ketu south",2023,10
+"1671","ketu south",2024,4
+"1672","kintampo north",2005,1
+"1673","kintampo north",2011,3
+"1674","kintampo north",2012,1
+"1675","kintampo north",2014,2
+"1676","kintampo north",2016,2
+"1677","kintampo north",2017,7
+"1678","kintampo north",2018,5
+"1679","kintampo north",2019,5
+"1680","kintampo north",2021,6
+"1681","kintampo north",2022,19
+"1682","kintampo north",2023,5
+"1683","kintampo north",2024,10
+"1684","kintampo south",2011,1
+"1685","kintampo south",2012,3
+"1686","kintampo south",2013,3
+"1687","kintampo south",2014,1
+"1688","kintampo south",2015,3
+"1689","kintampo south",2016,2
+"1690","kintampo south",2017,1
+"1691","kintampo south",2018,6
+"1692","kintampo south",2019,4
+"1693","kintampo south",2020,7
+"1694","kintampo south",2021,10
+"1695","kintampo south",2022,7
+"1696","kintampo south",2023,4
+"1697","kintampo south",2024,3
+"1698","komenda edna eguafo abirem",2005,3
+"1699","komenda edna eguafo abirem",2008,1
+"1700","komenda edna eguafo abirem",2009,1
+"1701","komenda edna eguafo abirem",2010,4
+"1702","komenda edna eguafo abirem",2011,2
+"1703","komenda edna eguafo abirem",2013,2
+"1704","komenda edna eguafo abirem",2015,2
+"1705","komenda edna eguafo abirem",2016,1
+"1706","komenda edna eguafo abirem",2018,1
+"1707","komenda edna eguafo abirem",2019,4
+"1708","komenda edna eguafo abirem",2020,2
+"1709","komenda edna eguafo abirem",2021,6
+"1710","komenda edna eguafo abirem",2022,5
+"1711","komenda edna eguafo abirem",2023,4
+"1712","komenda edna eguafo abirem",2024,7
+"1713","korle klottey",2016,1
+"1714","korle klottey",2017,2
+"1715","korle klottey",2019,1
+"1716","korle klottey",2021,3
+"1717","korle klottey",2022,9
+"1718","korle klottey",2023,1
+"1719","korle klottey",2024,9
+"1720","kpandai",2010,1
+"1721","kpandai",2011,2
+"1722","kpandai",2012,1
+"1723","kpandai",2014,1
+"1724","kpandai",2015,1
+"1725","kpandai",2016,1
+"1726","kpandai",2018,2
+"1727","kpandai",2019,2
+"1728","kpandai",2020,3
+"1729","kpandai",2021,3
+"1730","kpandai",2022,8
+"1731","kpandai",2023,1
+"1732","kpandai",2024,3
+"1733","kpando",2005,2
+"1734","kpando",2010,1
+"1735","kpando",2011,1
+"1736","kpando",2013,3
+"1737","kpando",2014,4
+"1738","kpando",2015,2
+"1739","kpando",2016,2
+"1740","kpando",2017,1
+"1741","kpando",2019,4
+"1742","kpando",2020,1
+"1743","kpando",2022,3
+"1744","kpando",2023,6
+"1745","kpando",2024,3
+"1746","kpone katamanso",2009,1
+"1747","kpone katamanso",2013,1
+"1748","kpone katamanso",2015,1
+"1749","kpone katamanso",2016,1
+"1750","kpone katamanso",2017,4
+"1751","kpone katamanso",2018,1
+"1752","kpone katamanso",2019,9
+"1753","kpone katamanso",2020,1
+"1754","kpone katamanso",2021,2
+"1755","kpone katamanso",2022,5
+"1756","kpone katamanso",2023,2
+"1757","kpone katamanso",2024,2
+"1758","krachi east",2008,4
+"1759","krachi east",2009,1
+"1760","krachi east",2010,12
+"1761","krachi east",2011,2
+"1762","krachi east",2012,2
+"1763","krachi east",2013,4
+"1764","krachi east",2014,6
+"1765","krachi east",2015,2
+"1766","krachi east",2016,6
+"1767","krachi east",2017,11
+"1768","krachi east",2018,7
+"1769","krachi east",2019,7
+"1770","krachi east",2020,4
+"1771","krachi east",2021,7
+"1772","krachi east",2022,10
+"1773","krachi east",2023,8
+"1774","krachi east",2024,7
+"1775","krachi nchumuru",2005,1
+"1776","krachi nchumuru",2009,1
+"1777","krachi nchumuru",2010,2
+"1778","krachi nchumuru",2011,2
+"1779","krachi nchumuru",2020,6
+"1780","krachi nchumuru",2021,2
+"1781","krachi nchumuru",2022,8
+"1782","krachi nchumuru",2023,10
+"1783","krachi nchumuru",2024,13
+"1784","krachi west",2012,1
+"1785","krachi west",2013,1
+"1786","krachi west",2017,1
+"1787","krachi west",2018,1
+"1788","krachi west",2019,4
+"1789","krachi west",2020,2
+"1790","krachi west",2021,2
+"1791","krachi west",2022,8
+"1792","krachi west",2023,4
+"1793","krachi west",2024,4
+"1794","krowor",2021,3
+"1795","krowor",2022,5
+"1796","krowor",2023,3
+"1797","krowor",2024,3
+"1798","kumasi",2016,1
+"1799","kumasi",2018,5
+"1800","kumasi",2019,6
+"1801","kumasi",2021,2
+"1802","kumasi",2022,4
+"1803","kumasi",2023,7
+"1804","kumasi",2024,10
+"1805","kumbungu",2008,4
+"1806","kumbungu",2010,4
+"1807","kumbungu",2011,2
+"1808","kumbungu",2020,1
+"1809","kumbungu",2021,1
+"1810","kumbungu",2022,1
+"1811","kumbungu",2023,4
+"1812","kumbungu",2024,5
+"1813","kwabre east",2006,4
+"1814","kwabre east",2008,4
+"1815","kwabre east",2009,1
+"1816","kwabre east",2010,3
+"1817","kwabre east",2011,2
+"1818","kwabre east",2012,2
+"1819","kwabre east",2013,1
+"1820","kwabre east",2014,1
+"1821","kwabre east",2015,1
+"1822","kwabre east",2016,2
+"1823","kwabre east",2017,1
+"1824","kwabre east",2018,8
+"1825","kwabre east",2019,13
+"1826","kwabre east",2020,2
+"1827","kwabre east",2021,8
+"1828","kwabre east",2022,8
+"1829","kwabre east",2023,4
+"1830","kwabre east",2024,4
+"1831","kwadaso",2020,2
+"1832","kwadaso",2021,3
+"1833","kwadaso",2022,1
+"1834","kwadaso",2023,1
+"1835","kwadaso",2024,2
+"1836","kwaebibirem",2006,4
+"1837","kwaebibirem",2008,3
+"1838","kwaebibirem",2010,1
+"1839","kwaebibirem",2011,9
+"1840","kwaebibirem",2012,2
+"1841","kwaebibirem",2013,1
+"1842","kwaebibirem",2014,2
+"1843","kwaebibirem",2015,1
+"1844","kwaebibirem",2016,3
+"1845","kwaebibirem",2017,2
+"1846","kwaebibirem",2018,14
+"1847","kwaebibirem",2019,10
+"1848","kwaebibirem",2020,6
+"1849","kwaebibirem",2021,7
+"1850","kwaebibirem",2022,2
+"1851","kwaebibirem",2023,4
+"1852","kwaebibirem",2024,5
+"1853","kwahu east",2005,2
+"1854","kwahu east",2006,2
+"1855","kwahu east",2010,1
+"1856","kwahu east",2011,1
+"1857","kwahu east",2012,1
+"1858","kwahu east",2013,1
+"1859","kwahu east",2014,1
+"1860","kwahu east",2017,4
+"1861","kwahu east",2018,4
+"1862","kwahu east",2019,6
+"1863","kwahu east",2020,2
+"1864","kwahu east",2021,2
+"1865","kwahu east",2023,3
+"1866","kwahu east",2024,3
+"1867","kwahu north",2011,4
+"1868","kwahu north",2012,1
+"1869","kwahu north",2013,7
+"1870","kwahu north",2014,8
+"1871","kwahu north",2015,1
+"1872","kwahu north",2017,2
+"1873","kwahu north",2018,3
+"1874","kwahu north",2020,1
+"1875","kwahu north",2021,3
+"1876","kwahu north",2022,1
+"1877","kwahu north",2024,8
+"1878","kwahu south",2008,1
+"1879","kwahu south",2013,5
+"1880","kwahu south",2016,2
+"1881","kwahu south",2017,1
+"1882","kwahu south",2018,2
+"1883","kwahu south",2020,1
+"1884","kwahu south",2021,3
+"1885","kwahu south",2022,3
+"1886","kwahu south",2023,2
+"1887","kwahu south",2024,1
+"1888","kwahu west",2008,3
+"1889","kwahu west",2009,1
+"1890","kwahu west",2010,1
+"1891","kwahu west",2012,3
+"1892","kwahu west",2013,1
+"1893","kwahu west",2015,2
+"1894","kwahu west",2016,1
+"1895","kwahu west",2018,3
+"1896","kwahu west",2019,2
+"1897","kwahu west",2020,2
+"1898","kwahu west",2021,6
+"1899","kwahu west",2022,7
+"1900","kwahu west",2023,5
+"1901","kwahu west",2024,4
+"1902","la dade kotopon",2020,1
+"1903","la dade kotopon",2021,2
+"1904","la dade kotopon",2022,1
+"1905","la dade kotopon",2023,2
+"1906","la dade kotopon",2024,2
+"1907","la nkwantanang madina",2019,3
+"1908","la nkwantanang madina",2020,1
+"1909","la nkwantanang madina",2021,2
+"1910","la nkwantanang madina",2022,1
+"1911","la nkwantanang madina",2023,2
+"1912","la nkwantanang madina",2024,4
+"1913","lambussie",2005,9
+"1914","lambussie",2006,3
+"1915","lambussie",2009,1
+"1916","lambussie",2010,1
+"1917","lambussie",2011,8
+"1918","lambussie",2012,2
+"1919","lambussie",2013,4
+"1920","lambussie",2014,4
+"1921","lambussie",2017,1
+"1922","lambussie",2018,3
+"1923","lambussie",2019,10
+"1924","lambussie",2020,26
+"1925","lambussie",2021,5
+"1926","lambussie",2022,7
+"1927","lambussie",2023,2
+"1928","lambussie",2024,3
+"1929","lawra",2005,60
+"1930","lawra",2006,11
+"1931","lawra",2008,1
+"1932","lawra",2011,9
+"1933","lawra",2012,6
+"1934","lawra",2013,7
+"1935","lawra",2014,4
+"1936","lawra",2015,1
+"1937","lawra",2017,2
+"1938","lawra",2018,2
+"1939","lawra",2019,3
+"1940","lawra",2021,2
+"1941","lawra",2022,2
+"1942","lawra",2023,4
+"1943","ledzokuku",2011,1
+"1944","ledzokuku",2018,1
+"1945","ledzokuku",2019,4
+"1946","ledzokuku",2020,3
+"1947","ledzokuku",2022,1
+"1948","ledzokuku",2023,1
+"1949","ledzokuku",2024,5
+"1950","lower manya krobo",2005,1
+"1951","lower manya krobo",2008,3
+"1952","lower manya krobo",2009,2
+"1953","lower manya krobo",2010,1
+"1954","lower manya krobo",2011,8
+"1955","lower manya krobo",2012,9
+"1956","lower manya krobo",2013,5
+"1957","lower manya krobo",2014,4
+"1958","lower manya krobo",2015,2
+"1959","lower manya krobo",2016,3
+"1960","lower manya krobo",2017,2
+"1961","lower manya krobo",2018,1
+"1962","lower manya krobo",2019,4
+"1963","lower manya krobo",2020,1
+"1964","lower manya krobo",2021,3
+"1965","lower manya krobo",2022,1
+"1966","lower manya krobo",2023,2
+"1967","lower manya krobo",2024,5
+"1968","mamprugu moagduri",2005,3
+"1969","mamprugu moagduri",2006,1
+"1970","mamprugu moagduri",2011,12
+"1971","mamprugu moagduri",2017,2
+"1972","mamprugu moagduri",2020,2
+"1973","mamprugu moagduri",2021,4
+"1974","mamprugu moagduri",2022,3
+"1975","mamprugu moagduri",2023,2
+"1976","mamprugu moagduri",2024,3
+"1977","mfantsiman",2005,2
+"1978","mfantsiman",2006,1
+"1979","mfantsiman",2009,2
+"1980","mfantsiman",2010,1
+"1981","mfantsiman",2011,4
+"1982","mfantsiman",2012,1
+"1983","mfantsiman",2014,3
+"1984","mfantsiman",2015,1
+"1985","mfantsiman",2016,1
+"1986","mfantsiman",2017,2
+"1987","mfantsiman",2018,1
+"1988","mfantsiman",2020,2
+"1989","mfantsiman",2021,5
+"1990","mfantsiman",2022,4
+"1991","mfantsiman",2023,6
+"1992","mfantsiman",2024,6
+"1993","mion",2005,2
+"1994","mion",2006,2
+"1995","mion",2008,1
+"1996","mion",2011,1
+"1997","mion",2017,4
+"1998","mion",2020,7
+"1999","mion",2021,7
+"2000","mion",2022,3
+"2001","mion",2023,6
+"2002","mion",2024,2
+"2003","mpohor",2012,1
+"2004","mpohor",2014,2
+"2005","mpohor",2015,1
+"2006","mpohor",2017,3
+"2007","mpohor",2018,1
+"2008","mpohor",2019,2
+"2009","mpohor",2020,1
+"2010","mpohor",2021,1
+"2011","mpohor",2022,2
+"2012","mpohor",2023,2
+"2013","mpohor",2024,2
+"2014","nabdam",2005,1
+"2015","nabdam",2009,5
+"2016","nabdam",2010,1
+"2017","nabdam",2011,4
+"2018","nabdam",2014,3
+"2019","nabdam",2016,2
+"2020","nabdam",2017,5
+"2021","nabdam",2018,6
+"2022","nabdam",2019,4
+"2023","nabdam",2020,8
+"2024","nabdam",2021,3
+"2025","nabdam",2022,2
+"2026","nabdam",2023,1
+"2027","nabdam",2024,4
+"2028","nadowli kaleo",2012,3
+"2029","nadowli kaleo",2013,4
+"2030","nadowli kaleo",2014,8
+"2031","nadowli kaleo",2015,4
+"2032","nadowli kaleo",2016,1
+"2033","nadowli kaleo",2017,4
+"2034","nadowli kaleo",2018,1
+"2035","nadowli kaleo",2019,6
+"2036","nadowli kaleo",2020,1
+"2037","nadowli kaleo",2021,6
+"2038","nadowli kaleo",2022,6
+"2039","nadowli kaleo",2023,9
+"2040","nadowli kaleo",2024,2
+"2041","nandom",2005,3
+"2042","nandom",2006,2
+"2043","nandom",2017,3
+"2044","nandom",2018,1
+"2045","nandom",2019,5
+"2046","nandom",2021,1
+"2047","nandom",2022,4
+"2048","nandom",2023,2
+"2049","nandom",2024,5
+"2050","nanton",2006,1
+"2051","nanton",2008,2
+"2052","nanton",2009,1
+"2053","nanton",2010,6
+"2054","nanton",2011,1
+"2055","nanton",2016,1
+"2056","nanton",2017,4
+"2057","nanton",2020,1
+"2058","nanton",2021,2
+"2059","nanton",2022,3
+"2060","nanton",2023,3
+"2061","nanton",2024,2
+"2062","nanumba north",2005,1
+"2063","nanumba north",2006,1
+"2064","nanumba north",2008,2
+"2065","nanumba north",2009,5
+"2066","nanumba north",2010,3
+"2067","nanumba north",2014,1
+"2068","nanumba north",2016,1
+"2069","nanumba north",2017,1
+"2070","nanumba north",2018,5
+"2071","nanumba north",2019,7
+"2072","nanumba north",2020,5
+"2073","nanumba north",2021,3
+"2074","nanumba north",2022,12
+"2075","nanumba north",2023,4
+"2076","nanumba north",2024,7
+"2077","nanumba south",2006,2
+"2078","nanumba south",2010,1
+"2079","nanumba south",2011,1
+"2080","nanumba south",2014,4
+"2081","nanumba south",2015,9
+"2082","nanumba south",2016,1
+"2083","nanumba south",2018,2
+"2084","nanumba south",2019,2
+"2085","nanumba south",2021,1
+"2086","nanumba south",2022,1
+"2087","nanumba south",2023,3
+"2088","nanumba south",2024,2
+"2089","new juaben north",2011,1
+"2090","new juaben north",2012,1
+"2091","new juaben north",2013,2
+"2092","new juaben north",2014,4
+"2093","new juaben north",2015,1
+"2094","new juaben north",2016,1
+"2095","new juaben north",2017,5
+"2096","new juaben north",2020,1
+"2097","new juaben north",2021,3
+"2098","new juaben north",2022,3
+"2099","new juaben north",2023,1
+"2100","new juaben north",2024,2
+"2101","new juaben south",2018,4
+"2102","new juaben south",2019,2
+"2103","new juaben south",2020,1
+"2104","new juaben south",2022,2
+"2105","new juaben south",2023,1
+"2106","new juaben south",2024,6
+"2107","ningo prampram",2008,3
+"2108","ningo prampram",2009,2
+"2109","ningo prampram",2010,1
+"2110","ningo prampram",2011,1
+"2111","ningo prampram",2017,3
+"2112","ningo prampram",2018,8
+"2113","ningo prampram",2019,3
+"2114","ningo prampram",2021,5
+"2115","ningo prampram",2022,2
+"2116","ningo prampram",2024,1
+"2117","nkoranza north",2005,3
+"2118","nkoranza north",2006,2
+"2119","nkoranza north",2010,7
+"2120","nkoranza north",2011,19
+"2121","nkoranza north",2012,5
+"2122","nkoranza north",2013,9
+"2123","nkoranza north",2014,9
+"2124","nkoranza north",2015,4
+"2125","nkoranza north",2016,16
+"2126","nkoranza north",2017,30
+"2127","nkoranza north",2018,41
+"2128","nkoranza north",2019,12
+"2129","nkoranza north",2020,5
+"2130","nkoranza north",2021,5
+"2131","nkoranza north",2022,10
+"2132","nkoranza north",2023,4
+"2133","nkoranza north",2024,9
+"2134","nkoranza south",2010,1
+"2135","nkoranza south",2011,2
+"2136","nkoranza south",2012,1
+"2137","nkoranza south",2013,3
+"2138","nkoranza south",2014,5
+"2139","nkoranza south",2016,5
+"2140","nkoranza south",2017,5
+"2141","nkoranza south",2018,7
+"2142","nkoranza south",2019,9
+"2143","nkoranza south",2020,15
+"2144","nkoranza south",2021,27
+"2145","nkoranza south",2022,15
+"2146","nkoranza south",2023,13
+"2147","nkoranza south",2024,10
+"2148","nkwanta north",2005,5
+"2149","nkwanta north",2009,1
+"2150","nkwanta north",2010,2
+"2151","nkwanta north",2011,1
+"2152","nkwanta north",2014,2
+"2153","nkwanta north",2015,3
+"2154","nkwanta north",2016,2
+"2155","nkwanta north",2017,2
+"2156","nkwanta north",2018,2
+"2157","nkwanta north",2019,6
+"2158","nkwanta north",2020,3
+"2159","nkwanta north",2023,7
+"2160","nkwanta north",2024,8
+"2161","nkwanta south",2008,1
+"2162","nkwanta south",2009,1
+"2163","nkwanta south",2010,1
+"2164","nkwanta south",2011,1
+"2165","nkwanta south",2013,3
+"2166","nkwanta south",2015,2
+"2167","nkwanta south",2016,2
+"2168","nkwanta south",2017,15
+"2169","nkwanta south",2018,1
+"2170","nkwanta south",2019,7
+"2171","nkwanta south",2021,2
+"2172","nkwanta south",2022,4
+"2173","nkwanta south",2023,3
+"2174","nkwanta south",2024,6
+"2175","north dayi",2015,2
+"2176","north dayi",2017,6
+"2177","north dayi",2018,5
+"2178","north dayi",2019,7
+"2179","north dayi",2020,3
+"2180","north dayi",2021,3
+"2181","north dayi",2022,4
+"2182","north dayi",2023,1
+"2183","north dayi",2024,3
+"2184","north east gonja",2020,2
+"2185","north east gonja",2021,15
+"2186","north east gonja",2022,2
+"2187","north east gonja",2023,4
+"2188","north east gonja",2024,3
+"2189","north gonja",2008,1
+"2190","north gonja",2009,1
+"2191","north gonja",2010,5
+"2192","north gonja",2011,22
+"2193","north gonja",2017,4
+"2194","north gonja",2020,2
+"2195","north gonja",2021,17
+"2196","north gonja",2022,5
+"2197","north gonja",2023,15
+"2198","north gonja",2024,12
+"2199","north tongu",2012,2
+"2200","north tongu",2013,1
+"2201","north tongu",2014,1
+"2202","north tongu",2015,1
+"2203","north tongu",2017,1
+"2204","north tongu",2018,3
+"2205","north tongu",2019,7
+"2206","north tongu",2020,2
+"2207","north tongu",2021,2
+"2208","north tongu",2023,7
+"2209","north tongu",2024,7
+"2210","nsawam adoagyiri",2016,3
+"2211","nsawam adoagyiri",2018,6
+"2212","nsawam adoagyiri",2019,4
+"2213","nsawam adoagyiri",2020,4
+"2214","nsawam adoagyiri",2021,6
+"2215","nsawam adoagyiri",2022,4
+"2216","nsawam adoagyiri",2023,3
+"2217","nsawam adoagyiri",2024,4
+"2218","nzema east",2014,2
+"2219","nzema east",2016,3
+"2220","nzema east",2018,2
+"2221","nzema east",2019,2
+"2222","nzema east",2020,1
+"2223","nzema east",2021,8
+"2224","nzema east",2022,5
+"2225","nzema east",2023,2
+"2226","nzema east",2024,6
+"2227","obuasi",2005,16
+"2228","obuasi",2006,3
+"2229","obuasi",2008,2
+"2230","obuasi",2010,7
+"2231","obuasi",2011,2
+"2232","obuasi",2014,2
+"2233","obuasi",2018,3
+"2234","obuasi",2019,1
+"2235","obuasi",2020,1
+"2236","obuasi",2021,4
+"2237","obuasi",2022,2
+"2238","obuasi",2023,1
+"2239","obuasi",2024,1
+"2240","obuasi east",2021,2
+"2241","obuasi east",2022,3
+"2242","obuasi east",2024,3
+"2243","offinso",2005,3
+"2244","offinso",2006,3
+"2245","offinso",2009,6
+"2246","offinso",2010,4
+"2247","offinso",2011,1
+"2248","offinso",2018,4
+"2249","offinso",2019,3
+"2250","offinso",2020,1
+"2251","offinso",2021,3
+"2252","offinso",2022,3
+"2253","offinso",2024,5
+"2254","offinso north",2010,2
+"2255","offinso north",2011,6
+"2256","offinso north",2012,9
+"2257","offinso north",2013,6
+"2258","offinso north",2015,1
+"2259","offinso north",2017,2
+"2260","offinso north",2018,7
+"2261","offinso north",2019,4
+"2262","offinso north",2020,1
+"2263","offinso north",2021,3
+"2264","offinso north",2022,11
+"2265","offinso north",2023,7
+"2266","offinso north",2024,3
+"2267","oforikrom",2021,1
+"2268","oforikrom",2022,5
+"2269","oforikrom",2024,2
+"2270","okai koi north",2019,1
+"2271","okai koi north",2020,4
+"2272","okai koi north",2021,6
+"2273","okai koi north",2022,2
+"2274","okai koi north",2023,4
+"2275","okai koi north",2024,1
+"2276","okere",2021,3
+"2277","okere",2022,2
+"2278","okere",2023,1
+"2279","okere",2024,3
+"2280","old tafo",2021,2
+"2281","old tafo",2022,3
+"2282","old tafo",2023,1
+"2283","old tafo",2024,4
+"2284","prestea huni valley",2005,1
+"2285","prestea huni valley",2006,1
+"2286","prestea huni valley",2010,2
+"2287","prestea huni valley",2014,2
+"2288","prestea huni valley",2016,2
+"2289","prestea huni valley",2017,4
+"2290","prestea huni valley",2018,10
+"2291","prestea huni valley",2019,10
+"2292","prestea huni valley",2020,8
+"2293","prestea huni valley",2021,8
+"2294","prestea huni valley",2022,7
+"2295","prestea huni valley",2023,6
+"2296","prestea huni valley",2024,2
+"2297","pru",2005,1
+"2298","pru",2008,2
+"2299","pru",2010,3
+"2300","pru",2011,3
+"2301","pru",2012,3
+"2302","pru",2013,1
+"2303","pru",2014,2
+"2304","pru",2015,3
+"2305","pru",2016,2
+"2306","pru",2017,1
+"2307","pru",2018,3
+"2308","pru",2019,4
+"2309","pru",2021,2
+"2310","pru",2023,1
+"2311","pru west",2019,6
+"2312","pru west",2020,2
+"2313","pru west",2021,3
+"2314","pru west",2022,5
+"2315","pusiga",2014,4
+"2316","pusiga",2016,1
+"2317","pusiga",2017,1
+"2318","pusiga",2018,3
+"2319","pusiga",2019,16
+"2320","pusiga",2020,29
+"2321","pusiga",2021,58
+"2322","pusiga",2022,26
+"2323","pusiga",2023,3
+"2324","pusiga",2024,6
+"2325","saboba",2009,1
+"2326","saboba",2010,1
+"2327","saboba",2012,3
+"2328","saboba",2016,2
+"2329","saboba",2017,2
+"2330","saboba",2018,2
+"2331","saboba",2019,5
+"2332","saboba",2020,6
+"2333","saboba",2021,3
+"2334","saboba",2022,3
+"2335","saboba",2023,3
+"2336","saboba",2024,7
+"2337","sagnarigu",2005,10
+"2338","sagnarigu",2006,4
+"2339","sagnarigu",2008,2
+"2340","sagnarigu",2011,5
+"2341","sagnarigu",2017,1
+"2342","sagnarigu",2020,2
+"2343","sagnarigu",2022,2
+"2344","sagnarigu",2023,2
+"2345","sagnarigu",2024,2
+"2346","savelugu",2018,2
+"2347","savelugu",2019,2
+"2348","savelugu",2020,4
+"2349","savelugu",2021,4
+"2350","savelugu",2022,2
+"2351","savelugu",2023,1
+"2352","savelugu",2024,2
+"2353","sawla tuna kalba",2005,5
+"2354","sawla tuna kalba",2006,1
+"2355","sawla tuna kalba",2008,5
+"2356","sawla tuna kalba",2009,1
+"2357","sawla tuna kalba",2010,2
+"2358","sawla tuna kalba",2011,21
+"2359","sawla tuna kalba",2013,4
+"2360","sawla tuna kalba",2014,1
+"2361","sawla tuna kalba",2016,2
+"2362","sawla tuna kalba",2018,3
+"2363","sawla tuna kalba",2019,3
+"2364","sawla tuna kalba",2020,7
+"2365","sawla tuna kalba",2021,16
+"2366","sawla tuna kalba",2022,8
+"2367","sawla tuna kalba",2023,6
+"2368","sawla tuna kalba",2024,12
+"2369","sefwi akontombra",2005,3
+"2370","sefwi akontombra",2006,7
+"2371","sefwi akontombra",2011,1
+"2372","sefwi akontombra",2012,1
+"2373","sefwi akontombra",2013,1
+"2374","sefwi akontombra",2014,2
+"2375","sefwi akontombra",2015,2
+"2376","sefwi akontombra",2017,5
+"2377","sefwi akontombra",2018,7
+"2378","sefwi akontombra",2019,9
+"2379","sefwi akontombra",2020,4
+"2380","sefwi akontombra",2021,5
+"2381","sefwi akontombra",2022,1
+"2382","sefwi akontombra",2023,2
+"2383","sefwi akontombra",2024,4
+"2384","sefwi wiawso",2005,1
+"2385","sefwi wiawso",2008,2
+"2386","sefwi wiawso",2010,2
+"2387","sefwi wiawso",2012,1
+"2388","sefwi wiawso",2013,1
+"2389","sefwi wiawso",2014,3
+"2390","sefwi wiawso",2015,2
+"2391","sefwi wiawso",2017,6
+"2392","sefwi wiawso",2018,1
+"2393","sefwi wiawso",2019,2
+"2394","sefwi wiawso",2021,2
+"2395","sefwi wiawso",2022,3
+"2396","sefwi wiawso",2023,2
+"2397","sefwi wiawso",2024,5
+"2398","sekondi takoradi",2005,2
+"2399","sekondi takoradi",2006,3
+"2400","sekondi takoradi",2008,1
+"2401","sekondi takoradi",2014,2
+"2402","sekondi takoradi",2018,8
+"2403","sekondi takoradi",2019,6
+"2404","sekondi takoradi",2020,1
+"2405","sekondi takoradi",2021,3
+"2406","sekondi takoradi",2022,2
+"2407","sekondi takoradi",2023,1
+"2408","sekondi takoradi",2024,20
+"2409","sekyere afram plains",2005,3
+"2410","sekyere afram plains",2006,1
+"2411","sekyere afram plains",2009,3
+"2412","sekyere afram plains",2011,6
+"2413","sekyere afram plains",2012,1
+"2414","sekyere afram plains",2013,1
+"2415","sekyere afram plains",2014,5
+"2416","sekyere afram plains",2016,1
+"2417","sekyere afram plains",2017,4
+"2418","sekyere afram plains",2018,7
+"2419","sekyere afram plains",2019,4
+"2420","sekyere afram plains",2020,2
+"2421","sekyere afram plains",2021,5
+"2422","sekyere afram plains",2022,15
+"2423","sekyere afram plains",2023,6
+"2424","sekyere afram plains",2024,8
+"2425","sekyere central",2008,1
+"2426","sekyere central",2010,3
+"2427","sekyere central",2011,2
+"2428","sekyere central",2012,2
+"2429","sekyere central",2017,2
+"2430","sekyere central",2018,8
+"2431","sekyere central",2019,2
+"2432","sekyere central",2021,1
+"2433","sekyere central",2022,1
+"2434","sekyere central",2023,1
+"2435","sekyere central",2024,1
+"2436","sekyere east",2008,2
+"2437","sekyere east",2009,1
+"2438","sekyere east",2011,8
+"2439","sekyere east",2014,2
+"2440","sekyere east",2015,1
+"2441","sekyere east",2016,2
+"2442","sekyere east",2018,3
+"2443","sekyere east",2019,2
+"2444","sekyere east",2020,3
+"2445","sekyere east",2021,1
+"2446","sekyere east",2022,4
+"2447","sekyere east",2023,2
+"2448","sekyere east",2024,2
+"2449","sekyere kumawu",2017,2
+"2450","sekyere kumawu",2020,1
+"2451","sekyere kumawu",2021,3
+"2452","sekyere kumawu",2022,2
+"2453","sekyere kumawu",2023,5
+"2454","sekyere kumawu",2024,6
+"2455","sekyere south",2006,4
+"2456","sekyere south",2011,4
+"2457","sekyere south",2012,6
+"2458","sekyere south",2013,2
+"2459","sekyere south",2018,4
+"2460","sekyere south",2019,2
+"2461","sekyere south",2021,4
+"2462","sekyere south",2022,3
+"2463","sekyere south",2023,1
+"2464","sekyere south",2024,2
+"2465","sene east",2005,4
+"2466","sene east",2006,17
+"2467","sene east",2008,5
+"2468","sene east",2009,3
+"2469","sene east",2010,1
+"2470","sene east",2011,2
+"2471","sene east",2013,1
+"2472","sene east",2014,4
+"2473","sene east",2015,2
+"2474","sene east",2016,3
+"2475","sene east",2017,4
+"2476","sene east",2018,11
+"2477","sene east",2019,5
+"2478","sene east",2020,3
+"2479","sene east",2021,3
+"2480","sene east",2022,6
+"2481","sene east",2023,9
+"2482","sene east",2024,6
+"2483","sene west",2012,2
+"2484","sene west",2013,6
+"2485","sene west",2014,2
+"2486","sene west",2015,2
+"2487","sene west",2016,5
+"2488","sene west",2017,6
+"2489","sene west",2018,6
+"2490","sene west",2019,5
+"2491","sene west",2020,4
+"2492","sene west",2021,3
+"2493","sene west",2024,2
+"2494","shai osudoku",2012,1
+"2495","shai osudoku",2013,6
+"2496","shai osudoku",2017,1
+"2497","shai osudoku",2019,1
+"2498","shai osudoku",2021,4
+"2499","shai osudoku",2022,3
+"2500","shai osudoku",2023,1
+"2501","shai osudoku",2024,1
+"2502","shama",2010,2
+"2503","shama",2015,2
+"2504","shama",2016,3
+"2505","shama",2017,1
+"2506","shama",2018,3
+"2507","shama",2019,5
+"2508","shama",2020,3
+"2509","shama",2021,13
+"2510","shama",2022,4
+"2511","shama",2023,7
+"2512","shama",2024,4
+"2513","sissala east",2005,7
+"2514","sissala east",2011,2
+"2515","sissala east",2012,1
+"2516","sissala east",2013,2
+"2517","sissala east",2015,4
+"2518","sissala east",2016,1
+"2519","sissala east",2017,2
+"2520","sissala east",2018,1
+"2521","sissala east",2019,16
+"2522","sissala east",2020,5
+"2523","sissala east",2021,9
+"2524","sissala east",2022,9
+"2525","sissala east",2023,8
+"2526","sissala east",2024,7
+"2527","sissala west",2006,1
+"2528","sissala west",2011,5
+"2529","sissala west",2013,3
+"2530","sissala west",2015,2
+"2531","sissala west",2017,4
+"2532","sissala west",2018,1
+"2533","sissala west",2019,27
+"2534","sissala west",2020,20
+"2535","sissala west",2021,32
+"2536","sissala west",2022,51
+"2537","sissala west",2023,52
+"2538","sissala west",2024,43
+"2539","south dayi",2010,2
+"2540","south dayi",2011,1
+"2541","south dayi",2014,3
+"2542","south dayi",2015,4
+"2543","south dayi",2016,2
+"2544","south dayi",2017,5
+"2545","south dayi",2018,3
+"2546","south dayi",2019,5
+"2547","south dayi",2020,3
+"2548","south dayi",2021,2
+"2549","south dayi",2022,3
+"2550","south dayi",2023,1
+"2551","south dayi",2024,3
+"2552","south tongu",2005,1
+"2553","south tongu",2010,1
+"2554","south tongu",2015,1
+"2555","south tongu",2017,2
+"2556","south tongu",2018,9
+"2557","south tongu",2019,3
+"2558","south tongu",2020,4
+"2559","south tongu",2021,2
+"2560","south tongu",2022,4
+"2561","south tongu",2023,3
+"2562","south tongu",2024,2
+"2563","suaman",2014,2
+"2564","suaman",2015,4
+"2565","suaman",2016,6
+"2566","suaman",2017,5
+"2567","suaman",2018,7
+"2568","suaman",2021,1
+"2569","suaman",2022,1
+"2570","suaman",2023,6
+"2571","suaman",2024,1
+"2572","suame",2021,6
+"2573","suame",2022,1
+"2574","suame",2023,4
+"2575","suhum",2012,2
+"2576","suhum",2014,1
+"2577","suhum",2016,3
+"2578","suhum",2017,5
+"2579","suhum",2018,2
+"2580","suhum",2019,11
+"2581","suhum",2020,4
+"2582","suhum",2021,2
+"2583","suhum",2022,4
+"2584","suhum",2023,6
+"2585","suhum",2024,2
+"2586","sunyani municipal",2005,5
+"2587","sunyani municipal",2006,4
+"2588","sunyani municipal",2008,4
+"2589","sunyani municipal",2009,3
+"2590","sunyani municipal",2010,1
+"2591","sunyani municipal",2011,7
+"2592","sunyani municipal",2012,14
+"2593","sunyani municipal",2013,5
+"2594","sunyani municipal",2014,5
+"2595","sunyani municipal",2016,3
+"2596","sunyani municipal",2017,13
+"2597","sunyani municipal",2018,9
+"2598","sunyani municipal",2019,5
+"2599","sunyani municipal",2020,1
+"2600","sunyani municipal",2021,4
+"2601","sunyani municipal",2022,1
+"2602","sunyani municipal",2023,4
+"2603","sunyani municipal",2024,7
+"2604","sunyani west",2009,1
+"2605","sunyani west",2010,3
+"2606","sunyani west",2011,6
+"2607","sunyani west",2012,11
+"2608","sunyani west",2013,5
+"2609","sunyani west",2014,12
+"2610","sunyani west",2015,6
+"2611","sunyani west",2016,14
+"2612","sunyani west",2017,6
+"2613","sunyani west",2018,10
+"2614","sunyani west",2019,6
+"2615","sunyani west",2020,9
+"2616","sunyani west",2021,3
+"2617","sunyani west",2022,3
+"2618","sunyani west",2023,5
+"2619","sunyani west",2024,2
+"2620","tain",2012,3
+"2621","tain",2013,22
+"2622","tain",2014,43
+"2623","tain",2015,27
+"2624","tain",2016,20
+"2625","tain",2017,14
+"2626","tain",2018,21
+"2627","tain",2019,4
+"2628","tain",2020,7
+"2629","tain",2021,13
+"2630","tain",2022,12
+"2631","tain",2023,21
+"2632","tain",2024,17
+"2633","talensi",2012,3
+"2634","talensi",2013,3
+"2635","talensi",2014,1
+"2636","talensi",2015,2
+"2637","talensi",2016,3
+"2638","talensi",2017,4
+"2639","talensi",2018,10
+"2640","talensi",2019,7
+"2641","talensi",2020,11
+"2642","talensi",2021,7
+"2643","talensi",2022,6
+"2644","talensi",2023,2
+"2645","talensi",2024,3
+"2646","tamale",2013,1
+"2647","tamale",2014,1
+"2648","tamale",2016,2
+"2649","tamale",2018,1
+"2650","tamale",2019,3
+"2651","tamale",2020,5
+"2652","tamale",2021,11
+"2653","tamale",2022,15
+"2654","tamale",2023,3
+"2655","tamale",2024,3
+"2656","tano north",2009,1
+"2657","tano north",2011,2
+"2658","tano north",2012,5
+"2659","tano north",2013,6
+"2660","tano north",2014,8
+"2661","tano north",2015,3
+"2662","tano north",2016,5
+"2663","tano north",2017,11
+"2664","tano north",2018,3
+"2665","tano north",2019,12
+"2666","tano north",2020,7
+"2667","tano north",2021,7
+"2668","tano north",2022,9
+"2669","tano north",2023,6
+"2670","tano north",2024,3
+"2671","tano south",2005,2
+"2672","tano south",2006,1
+"2673","tano south",2008,2
+"2674","tano south",2010,1
+"2675","tano south",2012,3
+"2676","tano south",2013,7
+"2677","tano south",2014,5
+"2678","tano south",2015,1
+"2679","tano south",2016,2
+"2680","tano south",2017,9
+"2681","tano south",2018,6
+"2682","tano south",2019,5
+"2683","tano south",2021,4
+"2684","tano south",2022,4
+"2685","tano south",2023,3
+"2686","tano south",2024,7
+"2687","tarkwa nsuaem",2010,1
+"2688","tarkwa nsuaem",2011,1
+"2689","tarkwa nsuaem",2014,2
+"2690","tarkwa nsuaem",2015,6
+"2691","tarkwa nsuaem",2016,9
+"2692","tarkwa nsuaem",2017,21
+"2693","tarkwa nsuaem",2018,23
+"2694","tarkwa nsuaem",2019,12
+"2695","tarkwa nsuaem",2020,3
+"2696","tarkwa nsuaem",2021,18
+"2697","tarkwa nsuaem",2022,22
+"2698","tarkwa nsuaem",2023,12
+"2699","tarkwa nsuaem",2024,8
+"2700","tatale sangule",2006,1
+"2701","tatale sangule",2016,2
+"2702","tatale sangule",2017,2
+"2703","tatale sangule",2018,6
+"2704","tatale sangule",2019,7
+"2705","tatale sangule",2020,7
+"2706","tatale sangule",2021,5
+"2707","tatale sangule",2022,8
+"2708","tatale sangule",2023,4
+"2709","tatale sangule",2024,3
+"2710","techiman municipal",2005,3
+"2711","techiman municipal",2006,1
+"2712","techiman municipal",2008,1
+"2713","techiman municipal",2010,1
+"2714","techiman municipal",2012,1
+"2715","techiman municipal",2013,8
+"2716","techiman municipal",2014,2
+"2717","techiman municipal",2015,5
+"2718","techiman municipal",2016,6
+"2719","techiman municipal",2017,10
+"2720","techiman municipal",2018,11
+"2721","techiman municipal",2019,22
+"2722","techiman municipal",2020,4
+"2723","techiman municipal",2021,7
+"2724","techiman municipal",2022,15
+"2725","techiman municipal",2023,22
+"2726","techiman municipal",2024,5
+"2727","techiman north",2014,2
+"2728","techiman north",2016,1
+"2729","techiman north",2017,2
+"2730","techiman north",2020,4
+"2731","techiman north",2021,15
+"2732","techiman north",2022,26
+"2733","techiman north",2023,12
+"2734","techiman north",2024,6
+"2735","tema",2012,5
+"2736","tema",2013,1
+"2737","tema",2018,1
+"2738","tema",2019,2
+"2739","tema",2020,1
+"2740","tema",2022,2
+"2741","tema west",2005,1
+"2742","tema west",2021,2
+"2743","tema west",2022,1
+"2744","tema west",2024,1
+"2745","tempane",2018,7
+"2746","tempane",2020,7
+"2747","tempane",2021,19
+"2748","tempane",2022,18
+"2749","tempane",2023,11
+"2750","tempane",2024,4
+"2751","tolon",2013,2
+"2752","tolon",2014,3
+"2753","tolon",2015,1
+"2754","tolon",2017,1
+"2755","tolon",2018,1
+"2756","tolon",2019,4
+"2757","tolon",2020,2
+"2758","tolon",2021,5
+"2759","tolon",2022,2
+"2760","tolon",2023,3
+"2761","tolon",2024,4
+"2762","twifo ati mokwa",2015,2
+"2763","twifo ati mokwa",2018,1
+"2764","twifo ati mokwa",2019,5
+"2765","twifo ati mokwa",2020,2
+"2766","twifo ati mokwa",2021,5
+"2767","twifo ati mokwa",2022,3
+"2768","twifo ati mokwa",2023,4
+"2769","twifo ati mokwa",2024,4
+"2770","twifo hemang lower denkyira",2005,5
+"2771","twifo hemang lower denkyira",2006,3
+"2772","twifo hemang lower denkyira",2008,2
+"2773","twifo hemang lower denkyira",2009,1
+"2774","twifo hemang lower denkyira",2012,1
+"2775","twifo hemang lower denkyira",2014,1
+"2776","twifo hemang lower denkyira",2015,1
+"2777","twifo hemang lower denkyira",2017,2
+"2778","twifo hemang lower denkyira",2019,1
+"2779","twifo hemang lower denkyira",2020,2
+"2780","twifo hemang lower denkyira",2021,5
+"2781","twifo hemang lower denkyira",2022,3
+"2782","twifo hemang lower denkyira",2023,7
+"2783","twifo hemang lower denkyira",2024,4
+"2784","upper denkyira east",2005,3
+"2785","upper denkyira east",2008,1
+"2786","upper denkyira east",2009,1
+"2787","upper denkyira east",2012,1
+"2788","upper denkyira east",2014,3
+"2789","upper denkyira east",2015,1
+"2790","upper denkyira east",2016,7
+"2791","upper denkyira east",2017,5
+"2792","upper denkyira east",2018,5
+"2793","upper denkyira east",2019,11
+"2794","upper denkyira east",2020,4
+"2795","upper denkyira east",2021,7
+"2796","upper denkyira east",2022,5
+"2797","upper denkyira east",2023,4
+"2798","upper denkyira east",2024,6
+"2799","upper denkyira west",2009,5
+"2800","upper denkyira west",2011,3
+"2801","upper denkyira west",2014,1
+"2802","upper denkyira west",2015,1
+"2803","upper denkyira west",2017,3
+"2804","upper denkyira west",2018,2
+"2805","upper denkyira west",2019,4
+"2806","upper denkyira west",2020,5
+"2807","upper denkyira west",2021,4
+"2808","upper denkyira west",2022,3
+"2809","upper denkyira west",2023,6
+"2810","upper denkyira west",2024,9
+"2811","upper manya krobo",2008,2
+"2812","upper manya krobo",2009,4
+"2813","upper manya krobo",2011,3
+"2814","upper manya krobo",2013,3
+"2815","upper manya krobo",2014,1
+"2816","upper manya krobo",2016,2
+"2817","upper manya krobo",2017,1
+"2818","upper manya krobo",2018,4
+"2819","upper manya krobo",2019,4
+"2820","upper manya krobo",2020,2
+"2821","upper manya krobo",2022,4
+"2822","upper manya krobo",2024,1
+"2823","upper west akim",2005,1
+"2824","upper west akim",2006,4
+"2825","upper west akim",2008,1
+"2826","upper west akim",2011,3
+"2827","upper west akim",2014,1
+"2828","upper west akim",2016,2
+"2829","upper west akim",2017,2
+"2830","upper west akim",2019,1
+"2831","upper west akim",2020,1
+"2832","upper west akim",2021,2
+"2833","upper west akim",2022,3
+"2834","upper west akim",2023,2
+"2835","upper west akim",2024,3
+"2836","wa east",2006,3
+"2837","wa east",2008,1
+"2838","wa east",2011,9
+"2839","wa east",2012,5
+"2840","wa east",2013,13
+"2841","wa east",2014,1
+"2842","wa east",2017,4
+"2843","wa east",2019,10
+"2844","wa east",2020,5
+"2845","wa east",2021,51
+"2846","wa east",2022,36
+"2847","wa east",2023,4
+"2848","wa east",2024,11
+"2849","wa municipal",2005,36
+"2850","wa municipal",2006,22
+"2851","wa municipal",2008,4
+"2852","wa municipal",2009,3
+"2853","wa municipal",2010,3
+"2854","wa municipal",2011,23
+"2855","wa municipal",2012,3
+"2856","wa municipal",2013,1
+"2857","wa municipal",2019,9
+"2858","wa municipal",2020,2
+"2859","wa municipal",2021,19
+"2860","wa municipal",2022,23
+"2861","wa municipal",2023,24
+"2862","wa municipal",2024,11
+"2863","wa west",2005,3
+"2864","wa west",2006,7
+"2865","wa west",2008,7
+"2866","wa west",2009,7
+"2867","wa west",2010,2
+"2868","wa west",2011,22
+"2869","wa west",2012,2
+"2870","wa west",2013,7
+"2871","wa west",2014,1
+"2872","wa west",2016,1
+"2873","wa west",2017,3
+"2874","wa west",2018,1
+"2875","wa west",2019,6
+"2876","wa west",2020,4
+"2877","wa west",2021,12
+"2878","wa west",2022,17
+"2879","wa west",2023,8
+"2880","wa west",2024,14
+"2881","wassa amenfi central",2006,4
+"2882","wassa amenfi central",2008,3
+"2883","wassa amenfi central",2009,6
+"2884","wassa amenfi central",2010,5
+"2885","wassa amenfi central",2015,4
+"2886","wassa amenfi central",2016,2
+"2887","wassa amenfi central",2017,7
+"2888","wassa amenfi central",2018,4
+"2889","wassa amenfi central",2019,5
+"2890","wassa amenfi central",2020,3
+"2891","wassa amenfi central",2021,2
+"2892","wassa amenfi central",2022,2
+"2893","wassa amenfi central",2023,9
+"2894","wassa amenfi central",2024,6
+"2895","wassa amenfi east",2005,3
+"2896","wassa amenfi east",2006,1
+"2897","wassa amenfi east",2009,2
+"2898","wassa amenfi east",2010,5
+"2899","wassa amenfi east",2011,2
+"2900","wassa amenfi east",2013,4
+"2901","wassa amenfi east",2014,8
+"2902","wassa amenfi east",2015,8
+"2903","wassa amenfi east",2016,7
+"2904","wassa amenfi east",2017,6
+"2905","wassa amenfi east",2018,7
+"2906","wassa amenfi east",2019,16
+"2907","wassa amenfi east",2020,1
+"2908","wassa amenfi east",2021,5
+"2909","wassa amenfi east",2022,7
+"2910","wassa amenfi east",2023,6
+"2911","wassa amenfi east",2024,8
+"2912","wassa amenfi west",2005,1
+"2913","wassa amenfi west",2008,2
+"2914","wassa amenfi west",2012,2
+"2915","wassa amenfi west",2013,4
+"2916","wassa amenfi west",2014,7
+"2917","wassa amenfi west",2015,3
+"2918","wassa amenfi west",2016,3
+"2919","wassa amenfi west",2017,3
+"2920","wassa amenfi west",2018,1
+"2921","wassa amenfi west",2019,3
+"2922","wassa amenfi west",2020,3
+"2923","wassa amenfi west",2021,2
+"2924","wassa amenfi west",2022,5
+"2925","wassa amenfi west",2023,7
+"2926","wassa amenfi west",2024,3
+"2927","wassa east",2010,2
+"2928","wassa east",2012,1
+"2929","wassa east",2017,1
+"2930","wassa east",2020,2
+"2931","wassa east",2021,12
+"2932","wassa east",2022,8
+"2933","wassa east",2023,6
+"2934","wassa east",2024,2
+"2935","weija gbawe",2020,5
+"2936","weija gbawe",2021,12
+"2937","weija gbawe",2022,3
+"2938","weija gbawe",2023,6
+"2939","weija gbawe",2024,4
+"2940","wenchi",2005,5
+"2941","wenchi",2010,1
+"2942","wenchi",2011,1
+"2943","wenchi",2012,3
+"2944","wenchi",2013,4
+"2945","wenchi",2014,2
+"2946","wenchi",2015,1
+"2947","wenchi",2016,5
+"2948","wenchi",2017,3
+"2949","wenchi",2018,7
+"2950","wenchi",2019,2
+"2951","wenchi",2020,6
+"2952","wenchi",2021,9
+"2953","wenchi",2022,13
+"2954","wenchi",2023,6
+"2955","wenchi",2024,4
+"2956","west akim",2012,1
+"2957","west akim",2013,2
+"2958","west akim",2014,2
+"2959","west akim",2018,3
+"2960","west akim",2019,5
+"2961","west akim",2020,2
+"2962","west akim",2021,5
+"2963","west akim",2022,3
+"2964","west akim",2023,5
+"2965","west akim",2024,14
+"2966","west gonja",2012,6
+"2967","west gonja",2013,2
+"2968","west gonja",2015,2
+"2969","west gonja",2016,9
+"2970","west gonja",2017,4
+"2971","west gonja",2018,3
+"2972","west gonja",2019,4
+"2973","west gonja",2020,6
+"2974","west gonja",2021,114
+"2975","west gonja",2022,3
+"2976","west gonja",2023,1
+"2977","west gonja",2024,1
+"2978","west mamprusi",2012,1
+"2979","west mamprusi",2013,1
+"2980","west mamprusi",2015,1
+"2981","west mamprusi",2016,4
+"2982","west mamprusi",2017,1
+"2983","west mamprusi",2018,3
+"2984","west mamprusi",2019,2
+"2985","west mamprusi",2020,1
+"2986","west mamprusi",2021,4
+"2987","west mamprusi",2022,3
+"2988","west mamprusi",2023,1
+"2989","west mamprusi",2024,1
+"2990","yendi",2008,1
+"2991","yendi",2014,1
+"2992","yendi",2015,5
+"2993","yendi",2016,2
+"2994","yendi",2017,4
+"2995","yendi",2018,1
+"2996","yendi",2019,9
+"2997","yendi",2020,6
+"2998","yendi",2021,5
+"2999","yendi",2022,5
+"3000","yendi",2023,2
+"3001","yendi",2024,3
+"3002","yilo krobo",2009,2
+"3003","yilo krobo",2010,1
+"3004","yilo krobo",2011,7
+"3005","yilo krobo",2012,4
+"3006","yilo krobo",2013,7
+"3007","yilo krobo",2014,22
+"3008","yilo krobo",2015,12
+"3009","yilo krobo",2016,15
+"3010","yilo krobo",2017,15
+"3011","yilo krobo",2018,3
+"3012","yilo krobo",2019,22
+"3013","yilo krobo",2020,5
+"3014","yilo krobo",2021,8
+"3015","yilo krobo",2022,8
+"3016","yilo krobo",2023,7
+"3017","yilo krobo",2024,1
+"3018","yunyoo nasuan",2016,1
+"3019","yunyoo nasuan",2017,1
+"3020","yunyoo nasuan",2018,1
+"3021","yunyoo nasuan",2019,3
+"3022","yunyoo nasuan",2020,2
+"3023","yunyoo nasuan",2021,3
+"3024","yunyoo nasuan",2022,2
+"3025","yunyoo nasuan",2023,4
+"3026","yunyoo nasuan",2024,5
+"3027","zabzugu",2015,1
+"3028","zabzugu",2016,1
+"3029","zabzugu",2017,11
+"3030","zabzugu",2018,22
+"3031","zabzugu",2019,6
+"3032","zabzugu",2020,4
+"3033","zabzugu",2021,4
+"3034","zabzugu",2022,2
+"3035","zabzugu",2023,3
+"3036","zabzugu",2024,4
