@@ -37,6 +37,8 @@ ghana_map <- st_read(
 # import modeling data (2005-2024 with covariates)
 ```{r}
 yf_data <- read.csv("yf_05_24.csv")
+
+sum(yf_data$cases)
 ```
 
 ```{r}
@@ -76,6 +78,13 @@ yf_final <- yf_sf %>%
     CAPTION == "Wet evergreen" ~ "Wet Evergreen",
     CAPTION == "Guinea savanna" ~ "Guinea Savanna",
     TRUE ~ CAPTION))
+
+zones <- yf_final %>% 
+  group_by(District) %>% 
+  slice_head(n = 1) %>% 
+  dplyr::select(District, zone_final)
+
+write.csv(zones, "ecological_zone_district.csv")
 ```
 
 

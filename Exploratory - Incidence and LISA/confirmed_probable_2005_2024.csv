@@ -1,120 +1,120 @@
-"","year","district","cases"
-"1",2005,"Atwima Mponua",2
-"2",2005,"Jirapa",3
-"3",2005,"Wassa Amenfi West",1
-"4",2006,"Juaboso",2
-"5",2006,"Sene East",2
-"6",2006,"Sene West",1
-"7",2006,"Wassa Amenfi West",1
-"8",2011,"South Dayi",1
-"9",2011,"Wa East",2
-"10",2011,"Zabzugu",1
-"11",2012,"Asunafo South",1
-"12",2012,"Central Gonja",1
-"13",2012,"Kumasi",1
-"14",2013,"Afram Plains South",1
-"15",2013,"Jirapa",1
-"16",2016,"Central Tongu",1
-"17",2016,"Jaman South",1
-"18",2016,"Kasena-Nankana West",1
-"19",2017,"Biakoye",1
-"20",2017,"Techiman Municipal",1
-"21",2019,"North Tongu",1
-"22",2020,"Bosomtwe",1
-"23",2020,"Techiman North",1
-"24",2021,"Banda",3
-"25",2021,"Bole",4
-"26",2021,"Bolgatanga East",1
-"27",2021,"Central Gonja",3
-"28",2021,"East Gonja",2
-"29",2021,"Ho",1
-"30",2021,"North Gonja",2
-"31",2021,"North-East Gonja",7
-"32",2021,"Sawla-Tuna-Kalba",2
-"33",2021,"Sunyani West",1
-"34",2021,"Tain",1
-"35",2021,"Wa East",3
-"36",2021,"Wenchi",2
-"37",2021,"West Gonja",24
-"38",2021,"Yendi",1
-"39",2022,"Afigya Kwabre North",1
-"40",2022,"Asante Akim South",1
-"41",2022,"Central Gonja",1
-"42",2022,"Daffiama-Bussie-Issa",1
-"43",2022,"Ga West",1
-"44",2022,"Kasena-Nankana",1
-"45",2022,"Kintampo South",1
-"46",2022,"Kwabre East",1
-"47",2022,"Kwahu South",1
-"48",2022,"Tano South",1
-"49",2022,"Tatale-Sangule",1
-"50",2022,"Upper Manya-Krobo",1
-"51",2022,"Wassa Amenfi West",1
-"52",2022,"West Gonja",1
-"53",2023,"Adansi South",1
-"54",2023,"Agona East",1
-"55",2023,"Amansie South",2
-"56",2023,"Assin Foso",1
-"57",2023,"Assin South",1
-"58",2023,"Asunafo North",1
-"59",2023,"Berekum West",1
-"60",2023,"Bolgatanga Municipal",1
-"61",2023,"Bosomtwe",1
-"62",2023,"Builsa North",1
-"63",2023,"Ellembelle",1
-"64",2023,"Fanteakwa North",1
-"65",2023,"Ga North",1
-"66",2023,"Jaman North",1
-"67",2023,"Juaboso",1
-"68",2023,"Kasena-Nankana",1
-"69",2023,"Ketu South",1
-"70",2023,"Ledzokuku",1
-"71",2023,"Lower-Manya Krobo",1
-"72",2023,"North Gonja",1
-"73",2023,"Nsawam-Adoagyiri",1
-"74",2023,"Okai Koi North",1
-"75",2023,"Sefwi-Akontombra",1
-"76",2023,"Sene East",1
-"77",2023,"Sissala West",6
-"78",2023,"Tano South",1
-"79",2023,"Tarkwa-Nsuaem",1
-"80",2023,"Tema",1
-"81",2023,"Wa Municipal",1
-"82",2024,"Adansi North",1
-"83",2024,"Afadjato South",1
-"84",2024,"Agona West",1
-"85",2024,"Asikuma-Odoben-Brakwa",1
-"86",2024,"Asokore Mampong",1
-"87",2024,"Asokwa",1
-"88",2024,"Asunafo North",1
-"89",2024,"Biakoye",2
-"90",2024,"Bongo",3
-"91",2024,"Bosome Freho",1
-"92",2024,"Central Tongu",1
-"93",2024,"East Akim - Abuakwa South",1
-"94",2024,"East Gonja",1
-"95",2024,"Ejura-Sekyedumase",1
-"96",2024,"Ellembelle",2
-"97",2024,"Ga South",2
-"98",2024,"Guan District",3
-"99",2024,"Gushiegu",1
-"100",2024,"Jirapa",2
-"101",2024,"Kadjebi",1
-"102",2024,"Keta",3
-"103",2024,"Ketu South",1
-"104",2024,"Kpandai",1
-"105",2024,"Kwabre East",2
-"106",2024,"North Gonja",1
-"107",2024,"Offinso North",1
-"108",2024,"Pusiga",2
-"109",2024,"Saboba",1
-"110",2024,"Sekondi-Takoradi",2
-"111",2024,"Shama",1
-"112",2024,"Sissala West",1
-"113",2024,"Suhum",1
-"114",2024,"Sunyani Municipal",2
-"115",2024,"Wa East",1
-"116",2024,"Wa West",2
-"117",2024,"Wassa Amenfi West",1
-"118",2024,"Yilo-Krobo",1
-"119",2024,"Yunyoo-Nasuan",1
+"","districts_clean","year","cases"
+"1","Adansi North",2024,1
+"2","Adansi South",2023,1
+"3","Afadjato South",2024,1
+"4","Afigya Kwabre North",2022,1
+"5","Afram Plains South",2013,1
+"6","Agona East",2023,1
+"7","Agona West",2024,1
+"8","Amansie South",2023,2
+"9","Asante Akim South",2022,1
+"10","Asikuma-Odoben-Brakwa",2024,1
+"11","Asokore Mampong",2024,1
+"12","Asokwa",2024,1
+"13","Assin Foso",2023,1
+"14","Assin South",2023,1
+"15","Asunafo North",2023,1
+"16","Asunafo North",2024,1
+"17","Asunafo South",2012,1
+"18","Atwima Mponua",2005,1
+"19","Banda",2021,3
+"20","Berekum West",2023,1
+"21","Biakoye",2017,1
+"22","Biakoye",2024,2
+"23","Bole",2021,4
+"24","Bolgatanga",2023,1
+"25","Bolgatanga East",2021,1
+"26","Bongo",2024,3
+"27","Bosome Freho",2024,1
+"28","Bosomtwe",2020,1
+"29","Bosomtwe",2023,1
+"30","Builsa North",2023,1
+"31","Central Gonja",2012,1
+"32","Central Gonja",2021,3
+"33","Central Gonja",2022,1
+"34","Central Tongu",2016,1
+"35","Central Tongu",2024,1
+"36","Daffiama-Bussie-Issa",2022,1
+"37","East Akim - Abuakwa South",2024,1
+"38","East Gonja",2021,2
+"39","East Gonja",2024,1
+"40","Ejura-Sekyedumase",2024,1
+"41","Ellembelle",2023,1
+"42","Ellembelle",2024,2
+"43","Fanteakwa North",2023,1
+"44","Ga North",2023,1
+"45","Ga South",2024,2
+"46","Ga West",2022,1
+"47","Guan",2024,3
+"48","Gushiegu",2024,1
+"49","Ho",2021,1
+"50","Jaman North",2023,1
+"51","Jaman South",2016,1
+"52","Jirapa",2005,1
+"53","Jirapa",2013,1
+"54","Jirapa",2024,2
+"55","Juaboso",2006,2
+"56","Juaboso",2023,1
+"57","Kadjebi",2024,1
+"58","Kasena-Nankana",2022,1
+"59","Kasena-Nankana",2023,1
+"60","Kasena-Nankana West",2016,1
+"61","Keta",2024,3
+"62","Ketu South",2023,1
+"63","Ketu South",2024,1
+"64","Kintampo South",2022,1
+"65","Kpandai",2024,1
+"66","Kumasi",2012,1
+"67","Kwabre East",2022,1
+"68","Kwabre East",2024,2
+"69","Kwahu South",2022,1
+"70","Ledzokuku",2023,1
+"71","Lower-Manya Krobo",2023,1
+"72","North Gonja",2021,2
+"73","North Gonja",2023,1
+"74","North Gonja",2024,1
+"75","North Tongu",2019,1
+"76","North-East Gonja",2021,7
+"77","Nsawam-Adoagyiri",2023,1
+"78","Offinso North",2024,1
+"79","Okai Koi North",2023,1
+"80","Pusiga",2024,2
+"81","Saboba",2024,1
+"82","Sawla-Tuna-Kalba",2021,2
+"83","Sefwi-Akontombra",2023,1
+"84","Sekondi-Takoradi",2024,2
+"85","Sene East",2006,2
+"86","Sene East",2023,1
+"87","Sene West",2006,1
+"88","Shama",2024,1
+"89","Sissala West",2023,6
+"90","Sissala West",2024,1
+"91","South Dayi",2011,1
+"92","Suhum",2024,1
+"93","Sunyani",2021,1
+"94","Sunyani",2024,2
+"95","Tain",2021,1
+"96","Tano South",2022,1
+"97","Tano South",2023,1
+"98","Tarkwa-Nsuaem",2023,1
+"99","Tatale-Sangule",2022,1
+"100","Techiman",2017,1
+"101","Techiman North",2020,1
+"102","Tema",2023,1
+"103","Upper Manya-Krobo",2022,1
+"104","Wa",2023,1
+"105","Wa East",2011,2
+"106","Wa East",2021,3
+"107","Wa East",2024,1
+"108","Wa West",2024,2
+"109","Wassa Amenfi West",2005,1
+"110","Wassa Amenfi West",2006,1
+"111","Wassa Amenfi West",2022,1
+"112","Wassa Amenfi West",2024,1
+"113","Wenchi",2021,2
+"114","West Gonja",2021,24
+"115","West Gonja",2022,1
+"116","Yendi",2021,1
+"117","Yilo-Krobo",2024,1
+"118","Yunyoo-Nasuan",2024,1
+"119","Zabzugu",2011,1

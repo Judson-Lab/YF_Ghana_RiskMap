@@ -26,9 +26,21 @@ gh_sf <- st_read("../Shapefiles/261_Districts.shp") %>%
 gh_sf <- gh_sf %>%
   filter(!is.na(OBJECTID))
 
-load("annualYF_1970_2024.RData")
 
-annual_dist <- read.csv("confirmed_probable_2005_2024.csv")
+annual_dist <- read.csv("confirmed_probable_2005_2024.csv") %>% 
+  #manual cleaning of district names
+  mutate(district = case_when(
+    districts_clean == "Bolgatanga" ~ 	"Bolgatanga Municipal",
+    districts_clean == "Guan" ~ "Guan District",
+    districts_clean == "Sunyani" & year == 2021 ~ "Sunyani West",
+    districts_clean == "Sunyani" & year == 2024 ~ "Sunyani Municipal",
+    districts_clean == "Techiman" ~ "Techiman North",
+    districts_clean == "Wa" ~ "Wa Municipal",
+    TRUE ~ districts_clean
+)) %>% 
+  select(-districts_clean)
+
+sum(annual_dist$cases)
 ```
 
 
@@ -362,6 +374,10 @@ compression = "lzw"
 
 # LISA supspected cases
 ```{r}
+morans_sus <- sf_poly_ranges %>%
+  left_join(five_district_sus %>% dplyr::select(district_final, range, incidence),
+            by = c("district_final", "range")) %>%
+  mutate(incidence_5yr = replace_na(incidence, 0))
 
 local_morans_5yrs_sus_calc <- function(data_df, year_col, inc_col, lw) {
   
@@ -484,6 +500,8 @@ districts_final <- tibble(
 district_year_grid <- district_year_grid %>% 
   left_join(districts_final, by = "district")
   
+zones <- read.csv("ecological_zone_district.csv") %>% 
+  left_join(districts_final, by = c("District" = "district"))
 
 # join cases to grid
 cases_conf <- district_year_grid %>%
@@ -495,7 +513,7 @@ cases_conf <- district_year_grid %>%
 cases_conf <- cases_conf %>% 
   left_join(zones, by = "district_final") %>% 
   left_join(pop_5yr, by = c("district_final", "year")) %>% 
-  group_by(year, zone, type) %>% 
+  group_by(year, zone_final, type) %>% 
   summarise(tot_cases = sum(tot_cases),
             tot_pop = sum(pop)) %>% 
   mutate(incidence = ((tot_cases / tot_pop)*100000))
@@ -509,7 +527,7 @@ cases_sus <- district_year_grid %>%
 cases_sus <- cases_sus %>% 
   left_join(zones, by = "district_final") %>% 
   left_join(pop_5yr, by = c("district_final", "year")) %>% 
-  group_by(year, zone, type) %>% 
+  group_by(year, zone_final, type) %>% 
   summarise(tot_cases = sum(tot_cases),
             tot_pop = sum(pop)) %>% 
   mutate(incidence = ((tot_cases / tot_pop)*100000))
@@ -519,8 +537,11 @@ cases_inc_tot <- bind_rows(cases_conf, cases_sus)
 ```
 
 ```{r}
+cols <- c("Transitional Zone" = "#5d2f89", "Deciduous Forest" = "#809D5B", 
+          "Coastal Savanna" = "#6CACE4","Wet Evergreen"  = "#39C7B2",
+          "Guinea Savanna" = "#F19425")
 
-inc_by_zone <- ggplot(cases_inc_tot, aes(x = year, y = incidence, color = zone)) +
+inc_by_zone <- ggplot(cases_inc_tot, aes(x = year, y = incidence, color = zone_final)) +
   geom_line(linewidth = 1) +
   # geom_point() + 
   facet_wrap(~ type, scales = "free_y") +

@@ -1,0 +1,194 @@
+---
+title: "GH_SA_SDMtune"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(pacman)
+p_load(SDMtune,
+       tidyverse, 
+       terra, 
+       sf, 
+       ENMeval,
+       ggplot2,
+       tidyterra,
+       gt
+)
+
+```
+
+
+## Set seed for reproducibility
+
+```{r}
+set.seed(15) #set random seed in order to reproduce this analysis
+```
+
+
+# Read in presence and environmental data
+```{r}
+occ_train <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_train_69_24.csv")
+occ_test <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_test_69_24.csv")
+
+
+envs <- rast("ENM_sensitivity_analysis_inputs/gh_envs_69_24.tif")
+
+bg <- read.csv("ENM_sensitivity_analysis_inputs/gh_bg_69_24.csv")
+
+bg <- bg %>% 
+  dplyr::select(-X)
+
+names(envs)
+
+```
+
+```{r}
+# Create SWD object
+train_data <- prepareSWD(species = "Yellow Fever",
+                   p = occ_train,
+                   a = bg,
+                   env = envs)
+
+test_data <- prepareSWD(species = "Yellow Fever",
+                   p = occ_test,
+                   a = bg,
+                   env = envs)
+
+```
+
+
+```{r}
+# # Hierarchical checkerboard with k=4 spatial groups
+# cb2 <- get.checkerboard(occs_coords, envs, bg, aggregation.factor = c(5,7))
+# evalplot.grps(pts = occs_coords, pts.grp = cb2$occs.grp, envs = envs)
+# 
+# table(cb2$occs.grp)
+# table(cb2$bg.grp)
+# 
+# 
+# # Plotting the background points on checkerboard
+# evalplot.grps(pts = bg, pts.grp = cb2$bg.grp, envs = envs)
+# 
+# # extract predictor variable values at background localities
+# bg.z <- cbind(bg, terra::extract(envs, bg, ID = FALSE, xy = FALSE)) %>% 
+#   dplyr::select(-c(x,y))
+# 
+# 
+# # plot histograms or rasters of MESS predictions with each partition as the reference.
+# evalplot.envSim.hist(occs.z = occs.z, bg.z = bg.z, occs.grp = cb2$occs.grp, 
+#                      bg.grp = cb2$bg.grp, ref.data = "occs")
+
+
+cb_folds <- get.checkerboard(occ_train, envs, bg, aggregation.factor = c(8,8))
+
+table(cb_folds$occs.grp)
+table(cb_folds$bg.grp)
+
+
+```
+
+
+```{r}
+# Train a Maxnet model
+model <- train(method = "Maxnet", 
+               data = train_data, 
+               folds = cb_folds,
+               reg =  0.5,
+               fc = "l")
+
+model
+```
+
+```{r}
+vi_maxnet <- SDMtune::varImp(model, 
+                    permut = 5)
+
+
+vi_maxnet <- vi_maxnet %>% 
+  mutate(Variable = case_when(
+    Variable == "built_surface" ~ "Built surface area",
+    Variable == "edge_density" ~ "Edge density",
+    Variable == "mean_temp_coldest_quarter" ~ "Mean temperature of coldest quarter",
+    Variable == "precip_wettest_quarter" ~ "Precipitation of wettest quarter",
+    Variable == "NDVI_mean" ~ "NDVI",
+    Variable == "elevation" ~ "Elevation",
+  ))
+
+vi_maxnet_tbl <- vi_maxnet %>% 
+  gt() %>% 
+  cols_label(
+    Variable = "Covariate",
+    Permutation_importance = "Permutation importance (%)",
+    sd = "Standard deviation (%)"
+  ) %>% 
+  fmt_number(
+    columns = c("Permutation_importance", "sd"),
+    decimals = 2
+  )
+
+vi_maxnet_tbl
+
+gtsave(vi_maxnet_tbl, "8.18_results/Variable_importance_table.docx")
+
+tiff("8.18_results/variable_importance_SA.tif", width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
+
+plotVarImp(vi_maxnet)
+
+dev.off()
+
+plotVarImp(vi_maxnet)
+```
+
+```{r}
+sd_map <- predict(model,
+        data = envs,
+        fun = "sd",
+        type = "cloglog")
+
+summary(sd_map)
+
+plot(sd_map)
+
+#min 0.0000000
+#max 0.307
+```
+
+
+```{r}
+
+sd_map_final <- ggplot() +
+  geom_spatraster(data = sd_map) +
+  scale_fill_viridis_c(, option = "mako", na.value = "transparent") +
+  labs(fill = "Environmental Suitability\nStandard Deviation")+
+  theme_bw() + #Clean theme
+  theme(
+    panel.grid.major = element_blank(),  # Remove major grid lines
+    panel.grid.minor = element_blank(),  # Remove minor grid lines
+    axis.ticks = element_blank(), # Remove axis ticks,
+    axis.text = element_blank(),  # Remove axis text (coordinate degrees)
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank()
+  )
+
+sd_map_final
+
+ggsave(
+filename = file.path("8.18_results/GH_SA_SD_suitability_map.tiff"),
+plot = sd_map_final,
+device = "tiff",
+dpi = 300,
+width = 180,
+height = 120,
+units = "mm",
+compression = "lzw"
+)
+
+```
+
+
