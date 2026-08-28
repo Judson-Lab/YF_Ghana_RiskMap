@@ -69,13 +69,13 @@ gh_vect <- terra::vect(gh_sf)
 ## Import mean annual NDVI - averaged from 2000-2020
 
 ```{r}
-ndvi <- rast("../../Ghana_ENM_covariates/Mean_NDVI_Ghana_2000_2024.tif")
+ndvi <- terra::rast("../../Ghana_ENM_covariates/Mean_NDVI_Ghana_2000_2024.tif")
 
 
 
 # create template with extent of shapefile
-template <- crop(ndvi, gh_vect)
-template <- mask(template, gh_vect)
+template <- terra::crop(ndvi, gh_vect)
+template <- terra::mask(template, gh_vect)
 
 plot(template)
 
@@ -112,7 +112,7 @@ bio <- bio %>%
   terra::mask(template)
 
 # elevation data
-gh_elev <- rast("../../Ghana_ENM_covariates/wc2.1_30s_elev.tif") %>% 
+gh_elev <- terra::rast("../../Ghana_ENM_covariates/gh_elevation_worldclim.tif") %>% 
   terra::project(template, method = "bilinear") %>% 
   terra::crop(template) %>% 
   terra::mask(template)
@@ -233,7 +233,7 @@ print(round(cor_filtered, 2))
 
 
 #Open TIFF device
-tiff(filename = "8.18_reuslts/SA_ENM_cov.tif",
+tiff(filename = "Final_Results/SA_ENM_cov.tif",
      width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
 
 plot(envs_filtered_pop)
@@ -254,7 +254,7 @@ Higher positive values indicated more similarity.
 ```{r}
 occs_train <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_train_69_24.csv")
 
-occs_test  <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_test_69_24.csv")
+occs_test  <- read.csv("../../ENM_inputs_final/gh_occs_test_05_24.csv")
 
 
 # extract climatic variables at occurrences and filter out occurrences with NAs for environmental variables
@@ -437,7 +437,7 @@ mod.seq_kd_bias <- eval.models(m_kd_bias)[[opt.seq_kd_bias$tune.args]] #select o
 mod.seq_kd_bias$betas # non-zero coefficients in model
 
 # Open TIFF device
-tiff(filename = "8.18_results/ENM_response_curves_SA.tif",
+tiff(filename = "Final_Results/ENM_response_curves_SA.tif",
      width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
 
 plot(mod.seq_kd_bias, type = "cloglog") #plot response curves
@@ -454,7 +454,7 @@ plot(pred.seq_kd_bias)
 points(eval.occs(m_kd_bias), pch = 21, bg = eval.occs.grp(m_kd_bias))
 
 
-writeRaster(pred.seq_kd_bias, "8.18_results/SA_69_70_env_pred.tif", overwrite = TRUE)
+writeRaster(pred.seq_kd_bias, "Final_Results/SA_69_70_env_pred.tif", overwrite = TRUE)
 
 ```
 
@@ -476,12 +476,8 @@ test.df <- terra::extract(pred.seq_kd_bias, coords_test)
 # pull numeric vector
 test.vals <- test.df[,1]   # pull the numeric column
 
-summary(test.vals) ## one NA right on southern coast
-
-clean_test.vals <- test.vals[!is.na(test.vals)]
-
 p_load(ecospat)
-test_cbi <- ecospat.boyce(pred_vec, clean_test.vals)
+test_cbi <- ecospat.boyce(pred_vec, test.vals)
 test_cbi
 
 
@@ -495,7 +491,7 @@ th_or10 <- quantile(train_vals, 0.10, na.rm = TRUE) #0.28
 th_or10
 
 # compute test data OR10
-OR10_test <- mean(clean_test.vals < th_or10)
+OR10_test <- mean(test.vals < th_or10)
 OR10_test 
 
 plot(pred.seq_kd_bias, axes = FALSE, box = FALSE)
@@ -545,7 +541,7 @@ suitability_map_cont
 
 ```{r}
 ggsave(
-filename = file.path("8.18_results/Cont_Suitability_SA.tiff"),
+filename = file.path("Final_Results/Cont_Suitability_SA.tiff"),
 plot = suitability_map_cont,
 device = "tiff",
 dpi = 300,
@@ -559,10 +555,9 @@ compression = "lzw"
 
 # Save ENM inputs for SDMtune
 ```{r}
-# write.csv(occs_test, "8.18_results/gh_occs_test_69_24.csv")
-# write.csv(occs_train, "8.18_results/gh_occs_train_69_24.csv")
-write.csv(bg, "8.18_results/gh_bg_69_24.csv")
-writeRaster(envs_filtered_pop, "8.18_results/gh_envs_69_24.tif", overwrite = TRUE)
+
+write.csv(bg, "Final_Results/gh_bg_69_24.csv")
+writeRaster(envs_filtered_pop, "Final_Results/gh_envs_69_24.tif", overwrite = TRUE)
 
 ```
 
@@ -667,7 +662,7 @@ or_min_map <- ggplot() +
 or_min_map
 
 ggsave(
-filename = file.path("8.18_results/GH_OR_min_suitability_map_SA.tiff"),
+filename = file.path("Final_Results/GH_OR_min_suitability_map_SA.tiff"),
 plot = or_min_map,
 device = "tiff",
 dpi = 300,
@@ -734,7 +729,7 @@ or_10_map <- ggplot() +
 or_10_map
 
 ggsave(
-filename = file.path("8.18_results/GH_OR_10_suitability_map_SA.tiff"),
+filename = file.path("Final_Results/GH_OR_10_suitability_map_SA.tiff"),
 plot = or_10_map,
 device = "tiff",
 dpi = 300,
@@ -768,7 +763,7 @@ ggplot() +
   geom_sf(data = gh_vect, fill = NA, color = "black", linewidth = 0.10)
 
 
-writeRaster(suit_class, "8.18_results/env_suitability_thresholds_SA.tif", overwrite = TRUE)
+writeRaster(suit_class, "Final_Results/env_suitability_thresholds_SA.tif", overwrite = TRUE)
 ```
 
 
@@ -838,7 +833,7 @@ suitability_category_map
 
 ```{r}
 ggsave(
-filename = file.path("8.18_results", "environmental_suitability_categories_SA.tiff"),
+filename = file.path("Final_Results", "environmental_suitability_categories_SA.tiff"),
 plot = suitability_category_map,
 device = "tiff",
 dpi = 300,

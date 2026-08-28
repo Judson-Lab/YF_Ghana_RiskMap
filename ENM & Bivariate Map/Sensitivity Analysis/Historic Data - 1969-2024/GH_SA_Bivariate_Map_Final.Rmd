@@ -190,7 +190,7 @@ finalPlot <- ggdraw() +
 finalPlot
 
 ggsave(
-filename = file.path("8.18_results/Bivariate_risk_map_SA.tiff"),
+filename = file.path("Final_Results/Bivariate_risk_map_SA.tiff"),
 plot = finalPlot,
 bg = "transparent",
 device = "tiff",

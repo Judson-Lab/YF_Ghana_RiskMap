@@ -122,8 +122,6 @@ vi_maxnet_tbl <- vi_maxnet %>%
 
 vi_maxnet_tbl
 
-gtsave(vi_maxnet_tbl, "Final_Results/Variable_importance_table.docx")
-
 tiff("Final_Results/variable_importance.tif", width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
 
 plotVarImp(vi_maxnet)
@@ -187,7 +185,7 @@ compression = "lzw"
 #5×5km spatial-resolution global maps of probability of occurrence
 # occ data from 1927-2024
 # 105 occ from 2015-2024
-lim <- rast("Sensitivity Analyses/YF_riskmap_wmean_masked.tif")
+lim <- rast("Sensitivity Analysis/YF_riskmap_wmean_masked.tif")
 
 plot(lim)
 

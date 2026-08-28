@@ -33,7 +33,7 @@ set.seed(15) #set random seed in order to reproduce this analysis
 # Read in presence and environmental data
 ```{r}
 occ_train <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_train_69_24.csv")
-occ_test <- read.csv("ENM_sensitivity_analysis_inputs/gh_occs_test_69_24.csv")
+occ_test <- read.csv("../../ENM_inputs_final/gh_occs_test_05_24.csv")
 
 
 envs <- rast("ENM_sensitivity_analysis_inputs/gh_envs_69_24.tif")
@@ -133,9 +133,8 @@ vi_maxnet_tbl <- vi_maxnet %>%
 
 vi_maxnet_tbl
 
-gtsave(vi_maxnet_tbl, "8.18_results/Variable_importance_table.docx")
 
-tiff("8.18_results/variable_importance_SA.tif", width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
+tiff("Final_Results/variable_importance_SA.tif", width = 180, height = 120, units = "mm", res = 300, compression = "lzw")
 
 plotVarImp(vi_maxnet)
 
@@ -179,7 +178,7 @@ sd_map_final <- ggplot() +
 sd_map_final
 
 ggsave(
-filename = file.path("8.18_results/GH_SA_SD_suitability_map.tiff"),
+filename = file.path("Final_Results/GH_SA_SD_suitability_map.tiff"),
 plot = sd_map_final,
 device = "tiff",
 dpi = 300,
