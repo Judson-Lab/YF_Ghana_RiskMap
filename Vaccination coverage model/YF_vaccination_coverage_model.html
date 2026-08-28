@@ -357,11 +357,19 @@ display: none;
 </div>
 
 
-<div id="setup" class="section level2">
-<h2>Setup</h2>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>This code generates a model for estimating sublevel vaccination
+coverage against vaccine-preventable diseases. For this manuscript, it
+was used to estimate district-level vaccination coverage against yellow
+fever in Ghana from 2000 to 2025. The steps for producing these
+estimates are as follows.</p>
 </div>
-<div id="packages" class="section level2">
-<h2>Packages</h2>
+<div id="setup-display-code-and-output" class="section level2">
+<h2>Setup: display code and output</h2>
+</div>
+<div id="setup-r-packages" class="section level2">
+<h2>Setup: R packages</h2>
 <pre class="r"><code>library(tidyr)
 library(ggplot2)
 library(dplyr)
@@ -372,14 +380,25 @@ library(stringr)
 library(grid) #map cropping
 library(ggrepel) #map labelling</code></pre>
 </div>
-<div id="replace-missing-values-with-0" class="section level2">
-<h2>Replace missing values with 0</h2>
+<div id="setup-replace-all-missing-values-with-0" class="section level2">
+<h2>Setup: Replace all missing values with 0</h2>
 <pre class="r"><code>clamp01 &lt;- function(x) { x[is.na(x)] &lt;- 0; pmin(pmax(x, 0), 1) }</code></pre>
 </div>
-<div id="this-code-uses-baseline-coverage-from-2000-to-estimate-district-level-yf-vaccination-coverage-in-ghana.-the-model-is-currently-being-used-for-risk-mapping." class="section level2">
-<h2>This code uses baseline coverage from 2000 to estimate
-district-level YF vaccination coverage in Ghana. The model is currently
-being used for risk mapping.</h2>
+<div id="step-1-produce-model" class="section level2">
+<h2>Step 1: Produce model</h2>
+<p>This code uses baseline coverage from 2000 to estimate district-level
+YF vaccination coverage in Ghana by producing a stock-and-flow model
+where allocated proportions of infant and non-infant populations are
+transfered to vaccinated infant and non-infant compartments year to year
+following routine immunization (infants only) or supplementary
+immunization activities (infants and non-infants). The cumulative number
+of vaccinated infants and non-infants is therefore divided by the total
+population per district in each year to calculate vaccination coverage.
+Previously vaccinated individuals are presumed to be excluded from
+further vaccination, and vaccination is presumed to confer lifelong
+protection.</p>
+<p>The model-estimated coverages are currently being used as covariates
+for risk mapping.</p>
 <pre class="r"><code>run_model_one_district &lt;- function(df) {
   
   df &lt;- df %&gt;%
@@ -560,8 +579,8 @@ being used for risk mapping.</h2>
   df
 }</code></pre>
 </div>
-<div id="run-model-for-all-districts" class="section level2">
-<h2>Run model for all districts</h2>
+<div id="step-2-run-model-for-all-261-ghana-districts" class="section level2">
+<h2>Step 2: run model for all 261 Ghana districts</h2>
 <pre class="r"><code>raw &lt;- read_csv(&quot;optimistic1970.csv&quot;)</code></pre>
 <pre><code>## Rows: 14616 Columns: 14
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -576,8 +595,9 @@ being used for risk mapping.</h2>
   group_modify(~ run_model_one_district(.x)) %&gt;%
   ungroup()</code></pre>
 </div>
-<div id="write-coverage-stock-to-.csv-for-map" class="section level2">
-<h2>Write coverage stock to .csv (for map)</h2>
+<div id="step-3-save-model-estimated-coverage-values-coverage_stock-column-to-.csv-for-risk-mapping" class="section level2">
+<h2>Step 3: Save model-estimated coverage values (“Coverage_stock”
+column) to .csv for risk mapping</h2>
 <pre class="r"><code>write.csv(
   results %&gt;%
     select(district, year, Coverage_stock),
@@ -585,8 +605,9 @@ being used for risk mapping.</h2>
   row.names = FALSE
 )</code></pre>
 </div>
-<div id="organize-data-sets-for-mapping-2005---2025-data-only" class="section level2">
-<h2>Organize data sets for mapping 2005 - 2025 data only</h2>
+<div id="additional-organize-data-sets-for-geographic-mapping-of-2005---2025-data-only" class="section level2">
+<h2>Additional: Organize data sets for geographic mapping of 2005 - 2025
+data only</h2>
 <pre class="r"><code>#Shapefile (.dbf and .shx files should be in same folder)
 districts_sf &lt;- st_read(
   &quot;261_Districts.shp&quot;,
@@ -665,8 +686,9 @@ cov_full &lt;- grid %&gt;%
 map_data &lt;- districts_sf2 %&gt;%
   left_join(cov_full, by = &quot;district_key&quot;)</code></pre>
 </div>
-<div id="map-2005---2025-data." class="section level2">
-<h2>Map 2005 - 2025 data.</h2>
+<div id="additional-map-vaccination-coverage-in-ghana-from-2005-to-2025." class="section level2">
+<h2>Additional: Map vaccination coverage in Ghana from 2005 to
+2025.</h2>
 <pre class="r"><code>p &lt;- ggplot(map_data) +
   geom_sf(aes(fill = Coverage_stock),
           color = &quot;black&quot;,
